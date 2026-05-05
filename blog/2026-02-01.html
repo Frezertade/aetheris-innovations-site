@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8H9B4X0W6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H8H9B4X0W6');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email-to-ERP Pipeline Built in 2 Weeks | Aetheris</title>
+  <meta name="description" content="A distributor manually copied order data from emails into their ERP. See how we built an automated pipeline that processes orders in seconds.">
+  <meta name="keywords" content="email to ERP automation, order processing automation, email data extraction, ERP integration, automated order entry, email parsing automation">
+  <link rel="canonical" href="https://www.aetherisinnovations.com/blog/2026-02-01.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.aetherisinnovations.com/blog/2026-02-01.html">
+  <meta property="og:title" content="Email-to-ERP Pipeline Built in 2 Weeks | Aetheris">
+  <meta property="og:description" content="A distributor was manually copying order data from emails into their ERP. We built an automated pipeline that processes incoming orders in seconds. Full breakdown.">
+  <meta property="og:image" content="https://www.aetherisinnovations.com/logo.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.aetherisinnovations.com/blog/2026-02-01.html">
+  <meta property="twitter:title" content="Email-to-ERP Pipeline Built in 2 Weeks | Aetheris">
+  <meta property="twitter:description" content="A distributor was manually copying order data from emails into their ERP. We built an automated pipeline that processes incoming orders in seconds. Full breakdown.">
+  <meta property="twitter:image" content="https://www.aetherisinnovations.com/logo.png">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "We Built an Email-to-ERP Pipeline in 2 Weeks. Here's How.",
+      "image": "https://www.aetherisinnovations.com/logo.png",
+      "datePublished": "2026-02-01",
+      "dateModified": "2026-04-02",
+      "author": {"@type": "Organization", "name": "Aetheris Innovations"},
+      "publisher": {"@type": "Organization", "name": "Aetheris Innovations", "logo": {"@type": "ImageObject", "url": "https://www.aetherisinnovations.com/logo.png"}},
+      "description": "A distribution company was manually copying order data from emails into their ERP. We built an automated pipeline in 2 weeks."
+    }
+  </script>
+  <style>
+    .blog-post { max-width: 800px; margin: 0 auto; padding: 2rem; padding-top: 120px; }
+    .blog-post h1 { font-size: 2.2rem; margin-bottom: 0.5rem; line-height: 1.3; }
+    .blog-meta { color: var(--text-muted); margin-bottom: 2rem; }
+    .blog-post h2 { color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; }
+    .blog-post h3 { color: var(--text-color); margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .blog-post p { line-height: 1.8; margin-bottom: 1.25rem; color: var(--text-muted); }
+    .blog-post ul, .blog-post ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+    .blog-post li { margin-bottom: 0.75rem; line-height: 1.7; color: var(--text-muted); }
+    .blog-post strong { color: var(--text-color); }
+    .blog-post blockquote { border-left: 4px solid var(--primary-color); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-muted); }
+    .blog-cta { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 3rem; }
+    .blog-cta h3 { margin-bottom: 1rem; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: var(--primary-color); text-decoration: none; }
+    .back-link:hover { text-decoration: underline; }
+    .stat-box { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center; }
+    .stat-box .stat-number { font-size: 2rem; font-weight: 700; color: var(--primary-color); }
+    .stat-box .stat-label { font-size: 0.9rem; color: var(--text-muted); }
+    .arch-box { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+    .arch-step { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.2rem 0; border-bottom: 1px solid var(--glass-border); }
+    .arch-step:last-child { border-bottom: none; }
+    .arch-icon { font-size: 1.8rem; min-width: 40px; text-align: center; }
+    .arch-content h3 { margin-top: 0; margin-bottom: 0.4rem; font-size: 1.1rem; }
+    .arch-content p { margin-bottom: 0; font-size: 0.95rem; }
+    .week-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+    .week-card { padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; }
+    .week-card h3 { margin-top: 0; color: var(--primary-color); }
+    .week-card ul { margin-bottom: 0; padding-left: 1.2rem; }
+    .week-card li { font-size: 0.9rem; }
+    @media (max-width: 768px) { .stat-box { grid-template-columns: 1fr; } .week-grid { grid-template-columns: 1fr; } .arch-step { flex-direction: column; gap: 0.5rem; } }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="navbar glass" role="navigation">
+    <div class="logo">
+      <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+        <img src="/logo.png" alt="Aetheris Innovations Logo" width="41" height="50" style="height: 50px; margin-right: 0.8rem;">
+        <span>Aetheris <span class="highlight">Innovations</span></span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#products">Products</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact" class="btn-primary">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content"><article class="blog-post">
+    <a href="/blog/" class="back-link">&larr; Back to Blog</a>
+    <h1>We Built an Email-to-ERP Pipeline in 2 Weeks. Here's How.</h1>
+    <p class="blog-meta">February 1, 2026 &bull; 8 min read &bull; Case Study: Cross-Industry</p>
+
+    <h2>The Problem: Orders Trapped in Inboxes</h2>
+
+    <p>A regional distribution company receives <strong>60-80 customer orders per day via email</strong>. Some arrive as PDF attachments. Some are typed directly into the email body. Some are <a href="https://hbr.org/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">Excel spreadsheets</a>. A few are even faxes that get scanned and forwarded.</p>
+
+    <p>Every single one had to be manually read, interpreted, and typed into their ERP to create a sales order. Two full-time customer service reps spent their mornings doing nothing but data entry — opening emails, matching SKUs, entering quantities, confirming ship-to addresses, and double-checking pricing.</p>
+
+    <p>The work was tedious, error-prone, and the biggest bottleneck in their order-to-shipment cycle. Orders received at 8 AM weren't in the system until noon. That meant same-day shipping was nearly impossible for anything that arrived after 10 AM.</p>
+
+    <h2>The Numbers</h2>
+
+    <div class="stat-box">
+      <div>
+        <div class="stat-number">60-80</div>
+        <div class="stat-label">Orders per day via email</div>
+      </div>
+      <div>
+        <div class="stat-number">4+ hrs</div>
+        <div class="stat-label">Daily data entry time</div>
+      </div>
+      <div>
+        <div class="stat-number">3.8%</div>
+        <div class="stat-label">Order entry error rate</div>
+      </div>
+    </div>
+
+    <p>The 3.8% error rate doesn't sound catastrophic until you do the math: at 70 orders/day, that's roughly <strong>13 wrong orders per week</strong>. Each one requires a correction, a phone call to the customer, and sometimes a return or re-shipment. The ops manager estimated that <a href="https://www.gartner.com/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">error correction consumed another 8-10 hours per week</a> across the team.</p>
+
+    <h2>The Architecture: How the Pipeline Works</h2>
+
+    <p>We built a 4-stage pipeline using Aetheris Flow that handles the entire journey from email to ERP record:</p>
+
+    <div class="arch-box">
+      <div class="arch-step">
+        <div class="arch-icon">📧</div>
+        <div class="arch-content">
+          <h3>Stage 1: Email Listener</h3>
+          <p>A dedicated orders inbox is monitored in real-time. When a new email arrives, the system classifies it (new order, revision, inquiry, or spam) and routes it accordingly. Attachments are automatically extracted.</p>
+        </div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-icon">🔍</div>
+        <div class="arch-content">
+          <h3>Stage 2: Document Intelligence</h3>
+          <p>Whether the order is a PDF, Excel file, or plain-text email, our extraction engine identifies the key fields: customer name, PO number, line items (SKU, quantity, unit price), ship-to address, and requested delivery date. It handles 15+ different customer order formats.</p>
+        </div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-icon">&#10003;</div>
+        <div class="arch-content">
+          <h3>Stage 3: Validation Engine</h3>
+          <p>Extracted data is cross-referenced against the ERP: Does this customer exist? Are the SKUs valid? Does the pricing match the contract? Is the ship-to address on file? Any discrepancy is flagged for human review — it doesn't silently pass through.</p>
+        </div>
+      </div>
+      <div class="arch-step">
+        <div class="arch-icon">🚀</div>
+        <div class="arch-content">
+          <h3>Stage 4: ERP Injection</h3>
+          <p>Validated orders are pushed to the ERP via API. A sales order is created with all line items, pricing, and shipping details. The original email is archived with a link to the ERP record for audit trail purposes.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>The Build: Week by Week</h2>
+
+    <p>We scoped this as a 2-week project. Here's how it actually played out:</p>
+
+    <div class="week-grid">
+      <div class="week-card">
+        <h3>Week 1</h3>
+        <ul>
+          <li>Mapped the existing order entry workflow</li>
+          <li>Collected 200 sample order emails across all formats</li>
+          <li>Built the email listener and classifier</li>
+          <li>Trained the extraction engine on the top 10 customer formats (covering 75% of order volume)</li>
+          <li>Set up ERP API connection in sandbox</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <h3>Week 2</h3>
+        <ul>
+          <li>Built the validation engine (customer, SKU, pricing checks)</li>
+          <li>Added remaining customer formats</li>
+          <li>Ran the pipeline against 3 days of live emails in shadow mode (process but don't inject)</li>
+          <li>Fixed edge cases: multi-page PDFs, orders with notes, partial SKU matches</li>
+          <li>Go-live with human review on all orders for first 48 hours</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>By the end of week 2, the pipeline was processing orders autonomously. The team only needed to review flagged exceptions — roughly 15% of orders in the first week, dropping to under 8% by week 4 as the system learned new patterns.</p>
+
+    <h2>The Results</h2>
+
+    <div class="stat-box">
+      <div>
+        <div class="stat-number">Under 60s</div>
+        <div class="stat-label">Email to ERP record</div>
+      </div>
+      <div>
+        <div class="stat-number">0.5%</div>
+        <div class="stat-label">Error rate (from 3.8%)</div>
+      </div>
+      <div>
+        <div class="stat-number">20+ hrs</div>
+        <div class="stat-label">Saved per week</div>
+      </div>
+    </div>
+
+    <p>The two CSRs who had been doing data entry were reassigned to proactive customer outreach — following up on quotes, handling escalations, and building relationships. The company's same-day shipping rate jumped from 60% to 92% because orders were in the system within minutes of receipt instead of hours.</p>
+
+    <blockquote>"We went from dreading Monday mornings to not even thinking about order entry. The pipeline just works." — Operations Manager</blockquote>
+
+    <h2>What Made This Work in 2 Weeks</h2>
+
+    <p>Speed wasn't luck — it was methodology. Three things made the tight timeline possible:</p>
+
+    <ol>
+      <li><strong>We started with real data, not specs.</strong> Instead of spending days documenting requirements, we collected 200 actual order emails on day one and built against reality.</li>
+      <li><strong>We focused on the 80/20.</strong> The top 10 customer formats covered 75% of volume. We shipped a working pipeline for those first, then expanded coverage in week 2.</li>
+      <li><strong>Shadow mode before go-live.</strong> Running the pipeline against live emails without injecting into the ERP let us catch edge cases with zero risk. By go-live day, we'd already processed 200+ real orders successfully.</li>
+    </ol>
+
+    <h2>Key Takeaways</h2>
+
+    <ul>
+      <li><strong><a href="https://www.mckinsey.com/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">Email is the most underestimated automation target</a>.</strong> If your team processes any kind of structured data from emails (orders, RFQs, status updates, invoices), that's a pipeline waiting to be built.</li>
+      <li><strong>You don't need to boil the ocean.</strong> Start with the highest-volume email type and expand from there. A 2-week project can deliver immediate ROI.</li>
+      <li><strong>Automation compounds.</strong> The direct time savings were 20+ hours/week. But the downstream impact — faster shipping, fewer errors, happier customers — was worth far more.</li>
+    </ul>
+
+    <div class="blog-cta">
+      <h3>Processing Orders From Email Manually?</h3>
+      <p>We'll show you how a custom email-to-ERP pipeline works for your specific order formats.</p>
+      <a href="/#contact" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Book a Free Assessment</a>
+    </div>
+
+    <div class="arch-box" style="margin-top: 3rem;">
+      <h3 style="color: var(--primary-color); margin-top: 0;">Related Articles</h3>
+      <ul style="margin: 0; padding-left: 1.25rem;">
+        <li><a href="/blog/2026-02-04.html" style="color: var(--primary-color);">How a 3PL Cut 30 Hours/Week of Manual BOL Processing</a></li>
+        <li><a href="/blog/2026-02-03.html" style="color: var(--primary-color);">The Real Cost of Manual Data Entry in Manufacturing</a></li>
+        <li><a href="/blog/2026-01-31.html" style="color: var(--primary-color);">The Complete Guide to Workflow Automation for Ops Teams</a></li>
+      </ul>
+    </div>
+  </article></main>
+
+  <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--glass-border); margin-top: 3rem;">
+    <p>&copy; 2026 Aetheris Innovations LLC. <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Aetheris Innovations
+> Elevating Industry through Intelligent Automation.
+
+We automate manual workflows for Logistics, Manufacturing, and Construction using AI, RPA, and Custom Engineering.
+
+## Core Products
+- **Aetheris Flow**: Zero-touch automation protocol. Extracts data from PDFs/Docs and enters it into ERPs. 
+  - Link: https://www.aetherisinnovations.com/products/aetheris-flow/
+- **Aetheris Scale**: Marketing automation. AI outreach and lead scoring.
+  - Link: https://www.aetherisinnovations.com/products/aetheris-scale/
+- **Aetheris Build**: Custom enterprise engineering. Spring Boot, Microservices, RAG/LLM Apps, React/Native.
+  - Link: https://www.aetherisinnovations.com/products/aetheris-build/
+
+## Company Info
+- **Mission**: Remove human error and operational drag.
+- **Leadership**: Frezer Kifle (Lead Full Stack), Natnael Menamo (Lead Frontend).
+- **Security**: Enterprise Grade, GDPR/SOC2 Compliant.
+
+## Contact
+- **Booking**: https://calendar.app.google/JajCvPZdws3fpAL18
+- **Email**: hello@aetheris.com

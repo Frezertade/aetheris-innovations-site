@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8H9B4X0W6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H8H9B4X0W6');
+  </script>
+
+    <!-- Google Tag Manager removed -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="OnlinePresence: AI-ready professional website, branded email, and managed hosting for small businesses. SEO-optimized, zero-maintenance, launch in 2 weeks." />
+    <link rel="canonical" href="https://www.aetherisinnovations.com/products/online-presence/" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aetherisinnovations.com/products/online-presence/">
+    <meta property="og:title" content="OnlinePresence | Professional Website & Email Packages">
+    <meta property="og:description" content="Professional website + branded email + hassle-free hosting. No technical skills required.">
+    <meta property="og:image" content="https://www.aetherisinnovations.com/logo.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.aetherisinnovations.com/products/online-presence/">
+    <meta property="twitter:title" content="OnlinePresence | Professional Website & Email Packages">
+    <meta property="twitter:description" content="Professional website + branded email + hassle-free hosting. No technical skills required.">
+    <meta property="twitter:image" content="https://www.aetherisinnovations.com/logo.png">
+    <title>OnlinePresence | Professional Website & Email Packages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/logo.png" as="image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css" />
+    <!-- Analytics, A/B Testing & CX Tracking -->
+    <script type="module" src="../../analytics.js"></script>
+    <style>
+        /* Online Presence Page Specific Styles */
+        .op-hero {
+            padding: 10rem 0 5rem;
+            text-align: center;
+            background: radial-gradient(ellipse at top, rgba(96, 165, 250, 0.15) 0%, transparent 60%);
+        }
+        .op-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+        .op-hero .subtitle {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Problem/Solution Section */
+        .problem-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .problem-box, .solution-box {
+            padding: 2.5rem;
+            border-radius: 16px;
+        }
+        .problem-box {
+            background: rgba(248, 113, 113, 0.08);
+            border: 1px solid rgba(248, 113, 113, 0.3);
+        }
+        .solution-box {
+            background: rgba(74, 222, 128, 0.08);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+        .problem-box h3, .solution-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .problem-box ul, .solution-box ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Cards */
+        .pricing-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto 0; /* top-margin so .pricing-badge (-12px) clears the features paragraph above */
+        }
+        .pricing-card {
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 40px rgba(96, 165, 250, 0.15);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .pricing-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .pricing-period {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        .pricing-setup {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+        .pricing-description {
+            color: var(--text-muted);
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+        .pricing-features {
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        .pricing-features h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .pricing-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pricing-features li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        .pricing-addons {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+        .pricing-addons strong {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .pricing-addons ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+        }
+        .pricing-addons li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.3rem 0;
+        }
+        .pricing-ideal {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .pricing-cta.primary {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        .pricing-cta.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(96, 165, 250, 0.4);
+        }
+        .pricing-cta.featured {
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            color: white;
+        }
+        .pricing-guarantee {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Comparison Table */
+        .comparison-table-wrap {
+            overflow-x: auto;
+            margin-top: 2rem;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--primary-color);
+            background: rgba(96, 165, 250, 0.05);
+        }
+        .comparison-table th:first-child {
+            border-radius: 8px 0 0 0;
+        }
+        .comparison-table th:last-child {
+            border-radius: 0 8px 0 0;
+            background: rgba(34, 211, 238, 0.1);
+        }
+        .comparison-table td:last-child {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .process-step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            position: relative;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+            color: white;
+        }
+        .process-step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .faq-item {
+            padding: 1.5rem 2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            transition: border-color 0.3s;
+        }
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: radial-gradient(ellipse at bottom, rgba(96, 165, 250, 0.12) 0%, transparent 70%);
+        }
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .final-cta .subtitle {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        .cta-large {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .cta-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(96, 165, 250, 0.4);
+        }
+        .no-obligation {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .direct-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .direct-contact a {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .op-hero {
+                padding: 8rem 0 4rem;
+            }
+            .problem-solution-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            .process-steps {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+                margin: 3rem auto 0;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) removed -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <nav class="navbar glass" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+            <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+                <img src="/logo.png" alt="Aetheris Innovations Logo" width="41" height="50" style="height: 50px; margin-right: 0.8rem;">
+                <span>Aetheris <span class="highlight">Innovations</span></span>
+            </a>
+        </div>
+        <div class="menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/#contact" class="btn-primary">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="sr-only" aria-live="polite" id="page-status">Online Presence product detail page is loaded and the product title is Professional Online Presence</div>
+        <!-- Hero Section -->
+        <section class="op-hero">
+            <div class="container">
+                <h1 class="reveal-up">Professional Online Presence, <span class="gradient-text">Built for You</span></h1>
+                <p class="subtitle reveal-up delay-1">
+                    Modern website + branded email + hassle-free hosting.
+                    <br>No technical skills required. We handle everything.
+                </p>
+                <div class="cta-group reveal-up delay-2" style="justify-content: center; margin-top: 2.5rem;">
+                    <a href="https://calendar.app.google/JajCvPZdws3fpAL18" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Strategy Call</a>
+                    <a href="#pricing" class="btn-secondary">View Pricing</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem/Solution Section -->
+        <section class="container">
+            <h2 class="section-title reveal-up">Your Business Deserves Better Than a <span class="highlight">Free Template</span></h2>
+            
+            <div class="problem-solution-grid reveal-up delay-1">
+                <div class="problem-box">
+                    <h3>❌ The DIY Problem</h3>
+                    <ul>
+                        <li>Spend weeks learning website builders</li>
+                        <li>Generic templates that look like everyone else</li>
+                        <li>Technical headaches with hosting and email</li>
+                        <li>Ongoing maintenance you don't have time for</li>
+                        <li>No one to call when things break</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-box">
+                    <h3>✅ The Aetheris Solution</h3>
+                    <ul>
+                        <li>Professional site built in days, not weeks</li>
+                        <li>Custom design that reflects your brand</li>
+                        <li>Everything handled: hosting, email, domains</li>
+                        <li>Ongoing support and updates included</li>
+                        <li>Real humans available when you need help</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="container" style="padding-top: 5rem;">
+            <div class="pricing-intro reveal-up">
+                <h2 class="section-title">Choose Your <span class="gradient-text">Package</span></h2>
+                <p>No contracts. Cancel anytime. All packages include:</p>
+            </div>
+            
+            <div class="included-features-bar reveal-up delay-1">
+                <span>✓ Mobile-responsive design</span>
+                <span>✓ SSL security (HTTPS)</span>
+                <span>✓ Contact form integration</span>
+                <span>✓ 24-hour email support</span>
+                <span>✓ Monthly uptime monitoring</span>
+                <span>✓ Free minor updates</span>
+            </div>
+
+            <div class="pricing-cards-grid">
+                <!-- Starter Package -->
+                <div class="pricing-card reveal-up delay-1">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Starter</h3>
+                    <div>
+                        <span class="pricing-amount">$99</span>
+                        <span class="pricing-period">/month</span>
+                    </div>
+                    <div class="pricing-setup">+ $299 one-time setup</div>
+                    
+                    <p class="pricing-description">
+                        Perfect for solo entrepreneurs and small local businesses
+                    </p>
+                    
+                    <div class="pricing-features">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li>✓ <strong>5-page professional website</strong></li>
+                            <li>✓ <strong>3 branded email addresses</strong> (Zoho Mail)</li>
+                            <li>✓ Custom domain setup (or register new)</li>
+                            <li>✓ Fast, reliable hosting</li>
+                            <li>✓ Mobile-optimized design</li>
+                            <li>✓ Contact form with spam protection</li>
+                            <li>✓ Basic SEO optimization</li>
+                            <li>✓ Social media integration</li>
+                            <li>✓ 24-hour email support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-addons">
+                        <strong>Add-Ons Available:</strong>
+                        <ul>
+                            <li>Extra email addresses: $8/month each</li>
+                            <li>Additional pages: $50-100 each</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-ideal">
+                        <strong>Ideal for:</strong> Freelancers, consultants, local service businesses, solo practitioners
+                    </div>
+                    
+                    <a href="https://calendar.app.google/JajCvPZdws3fpAL18" target="_blank" rel="noopener noreferrer" class="pricing-cta primary">
+                        Book Strategy Call
+                    </a>
+                    
+                    <div class="pricing-guarantee">
+                        💯 100% Satisfaction Guaranteed
+                    </div>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="pricing-card featured reveal-up delay-2">
+                    <div class="pricing-badge">Best Value</div>
+                    <h3>Professional</h3>
+                    <div>
+                        <span class="pricing-amount">$249</span>
+                        <span class="pricing-period">/month</span>
+                    </div>
+                    <div class="pricing-setup">+ $599 one-time setup</div>
+                    
+                    <p class="pricing-description">
+                        Ideal for growing businesses and professional services
+                    </p>
+                    
+                    <div class="pricing-features">
+                        <h4>Everything in Starter, plus:</h4>
+                        <ul>
+                            <li>✓ <strong>Up to 10-page website</strong></li>
+                            <li>✓ <strong>5 Google Workspace email accounts</strong></li>
+                            <li>✓ Google Calendar integration</li>
+                            <li>✓ Google Drive (30GB per user)</li>
+                            <li>✓ Google Meet video conferencing</li>
+                            <li>✓ Advanced SEO optimization</li>
+                            <li>✓ Monthly performance reports</li>
+                            <li>✓ Priority support (24-hour response)</li>
+                            <li>✓ 2 minor content updates per month</li>
+                            <li>✓ Appointment booking integration</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-addons">
+                        <strong>Add-Ons Available:</strong>
+                        <ul>
+                            <li>Extra Google Workspace users: $15/month each</li>
+                            <li>Additional pages: $75-150 each</li>
+                            <li>Advanced features: Custom quote</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-ideal">
+                        <strong>Ideal for:</strong> Law firms, medical practices, real estate agents, accounting firms, growing startups
+                    </div>
+                    
+                    <a href="https://calendar.app.google/JajCvPZdws3fpAL18" target="_blank" rel="noopener noreferrer" class="pricing-cta featured">
+                        Book Strategy Call
+                    </a>
+                    
+                    <div class="pricing-guarantee">
+                        💯 100% Satisfaction Guaranteed
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section class="container" style="padding-top: 5rem;">
+            <h2 class="section-title reveal-up">How We <span class="highlight">Compare</span></h2>
+            
+            <div class="comparison-table-wrap glass reveal-up delay-1" style="padding: 2rem; border-radius: 16px;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>DIY (Wix/Squarespace)</th>
+                            <th>Hire a Freelancer</th>
+                            <th>Aetheris OnlinePresence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Setup Time</td>
+                            <td>2-4 weeks (your time)</td>
+                            <td>3-6 weeks</td>
+                            <td><strong>3-5 days</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Cost</td>
+                            <td>$20-40 (templates only)</td>
+                            <td>$0 (but $2K+ upfront)</td>
+                            <td><strong>$99-249 all-inclusive</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Professional Design</td>
+                            <td>❌ Generic templates</td>
+                            <td>✅ (varies by skill)</td>
+                            <td><strong>✅ Custom design</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Branded Email</td>
+                            <td>❌ Extra cost</td>
+                            <td>❌ Extra cost</td>
+                            <td><strong>✅ Included</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Ongoing Support</td>
+                            <td>❌ Knowledge base only</td>
+                            <td>❌ Pay per change</td>
+                            <td><strong>✅ Included</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Technical Expertise</td>
+                            <td>⚠️ Some required</td>
+                            <td>❌ You manage freelancer</td>
+                            <td><strong>✅ None - we handle everything</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="container" style="padding-top: 5rem;">
+            <h2 class="section-title reveal-up">How It <span class="gradient-text">Works</span></h2>
+            
+            <div class="process-steps">
+                <div class="process-step reveal-up">
+                    <div class="step-number">1</div>
+                    <h3>Book Your Call</h3>
+                    <p>15-minute discovery call to understand your business and goals. No pressure, no obligations.</p>
+                </div>
+                
+                <div class="process-step reveal-up delay-1">
+                    <div class="step-number">2</div>
+                    <h3>Simple Onboarding</h3>
+                    <p>Fill out a 5-minute form with your business info, branding, and preferences. We handle the rest.</p>
+                </div>
+                
+                <div class="process-step reveal-up delay-2">
+                    <div class="step-number">3</div>
+                    <h3>We Build Your Site</h3>
+                    <p>Our team creates your custom website and sets up your professional email. Ready in 3-5 days.</p>
+                </div>
+                
+                <div class="process-step reveal-up delay-3">
+                    <div class="step-number">4</div>
+                    <h3>Review & Launch</h3>
+                    <p>We send you a preview link. Request any changes, then we make it live. Your business is online!</p>
+                </div>
+                
+                <div class="process-step reveal-up delay-4">
+                    <div class="step-number">5</div>
+                    <h3>Ongoing Support</h3>
+                    <p>Need updates? Have questions? Email us anytime. We respond within 24 hours.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container" style="padding-top: 5rem;">
+            <h2 class="section-title reveal-up">Frequently Asked <span class="highlight">Questions</span></h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item reveal-up">
+                    <h3>Is there a contract?</h3>
+                    <p>No contracts. You can cancel anytime. We're confident you'll love the service, so we don't lock you in.</p>
+                </div>
+                
+                <div class="faq-item reveal-up delay-1">
+                    <h3>What if I don't have a logo or branding?</h3>
+                    <p>No problem! We'll create a professional text-based design for you. If you want a custom logo later, we can help with that too.</p>
+                </div>
+                
+                <div class="faq-item reveal-up">
+                    <h3>Can I make changes after the site is live?</h3>
+                    <p>Yes! Professional package includes 2 minor updates per month. Starter clients can request changes anytime (larger changes may have additional fees).</p>
+                </div>
+                
+                <div class="faq-item reveal-up delay-1">
+                    <h3>Do you offer refunds?</h3>
+                    <p>If you're not satisfied with your site preview before launch, we'll refund your setup fee. Once live, monthly payments are non-refundable, but you can cancel anytime.</p>
+                </div>
+                
+                <div class="faq-item reveal-up">
+                    <h3>What if I already have a website?</h3>
+                    <p>We can rebuild it with a modern design or help you transition. We'll review your current site and preserve what works.</p>
+                </div>
+                
+                <div class="faq-item reveal-up delay-1">
+                    <h3>How quickly can I get started?</h3>
+                    <p>Book a call today. If you're ready to move forward, you could have your site live within a week.</p>
+                </div>
+                
+                <div class="faq-item reveal-up">
+                    <h3>What happens if I cancel?</h3>
+                    <p>You can cancel anytime with 30 days notice. Your site stays live until the end of your billing period. We can also help you export your content if you want to take it elsewhere.</p>
+                </div>
+                
+                <div class="faq-item reveal-up delay-1">
+                    <h3>Do I own the website?</h3>
+                    <p>The design and code are yours. The hosting is provided as part of the service. If you ever leave, we'll help you take your site with you.</p>
+                </div>
+                
+                <div class="faq-item reveal-up">
+                    <h3>What about email support?</h3>
+                    <p>We respond to all support requests within 24 hours (usually much faster). Professional package clients get priority support.</p>
+                </div>
+                
+                <div class="faq-item reveal-up delay-1">
+                    <h3>Can I upgrade later?</h3>
+                    <p>Absolutely! You can upgrade from Starter to Professional at any time. We'll just prorate the difference and expand your site accordingly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 class="reveal-up">Ready to Transform Your <span class="gradient-text">Online Presence</span>?</h2>
+                <p class="subtitle reveal-up delay-1">
+                    Stop losing customers to competitors with better websites.
+                    <br>Let's build something professional together.
+                </p>
+                
+                <a href="https://calendar.app.google/JajCvPZdws3fpAL18" target="_blank" rel="noopener noreferrer" class="cta-large reveal-up delay-2">
+                    Book Your Free Strategy Call
+                </a>
+                
+                <div class="no-obligation reveal-up delay-3">
+                    No obligation. No pressure. Just a conversation about your business.
+                </div>
+                
+                <div class="direct-contact reveal-up delay-3">
+                    Prefer email? <a href="mailto:fkifle@aetherisinnovations.com">fkifle@aetherisinnovations.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <div data-include="/footer.html" class="site-footer"></div>
+    <script type="module" src="../../main.js"></script>
+</body>
+
+</html>
