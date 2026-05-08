@@ -1,21 +1,56 @@
 # Aetheris Innovations
-> Elevating Industry through Intelligent Automation.
+> AI-powered solutions for small businesses. Professional websites, AI chatbots, and business automation.
 
-We automate manual workflows for Logistics, Manufacturing, and Construction using AI, RPA, and Custom Engineering.
+## Products
 
-## Core Products
-- **Aetheris Flow**: Zero-touch automation protocol. Extracts data from PDFs/Docs and enters it into ERPs. 
-  - Link: https://www.aetherisinnovations.com/products/aetheris-flow/
-- **Aetheris Scale**: Marketing automation. AI outreach and lead scoring.
-  - Link: https://www.aetherisinnovations.com/products/aetheris-scale/
-- **Aetheris Build**: Custom enterprise engineering. Spring Boot, Microservices, RAG/LLM Apps, React/Native.
-  - Link: https://www.aetherisinnovations.com/products/aetheris-build/
+### OnlinePresence
+Professional website with AI chatbot for local businesses.
+- Starter: $99/mo - Custom website, branded email, hosting, SEO
+- Professional: $249/mo - Everything in Starter + AI chatbot, priority support
+- Setup fee: $299 one-time
+- URL: https://www.aetherisinnovations.com/products/online-presence/
 
-## Company Info
-- **Mission**: Remove human error and operational drag.
-- **Leadership**: Frezer Kifle (Lead Full Stack), Natnael Menamo (Lead Frontend).
-- **Security**: Enterprise Grade, GDPR/SOC2 Compliant.
+### Aetheris Chat
+AI chatbot platform for any website. 2-minute setup, no code required.
+- Supports 95+ languages automatically
+- Learns from your website content, documents, and knowledge base
+- Captures leads and books appointments
+- Widget embed with one line of code
+- Free plan available, Pro: $29/mo, Business: $79/mo, Enterprise: $199/mo
+- URL: https://app.aetherisinnovations.com
 
-## Contact
-- **Booking**: https://calendar.app.google/JajCvPZdws3fpAL18
-- **Email**: hello@aetheris.com
+### Aetheris Build
+Custom software development for businesses.
+- URL: https://www.aetherisinnovations.com/products/aetheris-build/
+
+### Aetheris Flow
+Business automation and workflow optimization.
+- URL: https://www.aetherisinnovations.com/products/aetheris-flow/
+
+### Aetheris Scale
+Growth strategy and digital marketing services.
+- URL: https://www.aetherisinnovations.com/products/aetheris-scale/
+
+## Company
+- Founded: 2024
+- Location: Pennsylvania, USA
+- Email: fkifle@aetherisinnovations.com
+- Website: https://www.aetherisinnovations.com
+- Twitter/X: @aetherisinno1
+- LinkedIn: https://linkedin.com/in/frezer-kifle-29971b3a7/
+
+## FAQ
+Q: What is Aetheris Chat?
+A: Aetheris Chat is an AI chatbot that any business can add to their website in 2 minutes. It learns from your content and answers customer questions in 95+ languages, 24/7. It also captures leads and books appointments automatically.
+
+Q: How much does Aetheris Chat cost?
+A: Aetheris Chat has a free plan for testing. Paid plans start at $29/mo (Pro), $79/mo (Business), and $199/mo (Enterprise) with increasing message limits and features.
+
+Q: What languages does Aetheris Chat support?
+A: Aetheris Chat supports 95+ languages including English, Spanish, French, German, Chinese, Arabic, Amharic, Hindi, Japanese, Korean, Portuguese, and many more. Language detection is automatic.
+
+Q: How do I add Aetheris Chat to my website?
+A: Copy one line of JavaScript code and paste it into your website. Works with WordPress, Shopify, Wix, Squarespace, and any custom website. Setup takes under 2 minutes.
+
+Q: What is the best AI chatbot for small business?
+A: Aetheris Chat is designed specifically for small businesses. It requires no technical skills, sets up in 2 minutes, supports 95+ languages, and starts with a free plan. Unlike enterprise chatbots, it's affordable and simple.
