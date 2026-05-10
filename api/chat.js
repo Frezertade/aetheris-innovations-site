@@ -1,4 +1,5 @@
-import Anthropic from '@anthropic-ai/sdk';
+const AI_GATEWAY_BASE_URL = 'https://ai-gateway.vercel.sh/v1';
+const AI_GATEWAY_MODEL = process.env.AI_GATEWAY_MODEL || 'anthropic/claude-haiku-4.5';
 
 const AETHERIS_CONTEXT = `You are the AI assistant for Aetheris Innovations LLC. Your ONLY purpose is to help visitors learn about Aetheris services, products, and pricing.
 
@@ -119,27 +120,41 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'Invalid conversation history' });
         }
 
-        if (!process.env.ANTHROPIC_API_KEY) {
+        const gatewayToken = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+
+        if (!gatewayToken) {
             return res.status(500).json({ error: 'Chat service not configured' });
         }
-
-        const anthropic = new Anthropic({
-            apiKey: process.env.ANTHROPIC_API_KEY
-        });
 
         const messages = [
             ...history.slice(-10),
             { role: 'user', content: message }
         ];
 
-        const completion = await anthropic.messages.create({
-            model: 'claude-haiku-4-5-20251001',
-            max_tokens: 500,
-            system: AETHERIS_CONTEXT,
-            messages: messages
+        const gatewayResponse = await fetch(`${AI_GATEWAY_BASE_URL}/chat/completions`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${gatewayToken}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: AI_GATEWAY_MODEL,
+                max_tokens: 500,
+                messages: [
+                    { role: 'system', content: AETHERIS_CONTEXT },
+                    ...messages
+                ]
+            })
         });
 
-        const reply = completion.content[0]?.text || 'Sorry, I could not generate a response.';
+        if (!gatewayResponse.ok) {
+            const errorText = await gatewayResponse.text();
+            console.error('Vercel AI Gateway error:', gatewayResponse.status, errorText);
+            return res.status(502).json({ error: 'Chat service temporarily unavailable' });
+        }
+
+        const completion = await gatewayResponse.json();
+        const reply = completion.choices?.[0]?.message?.content || 'Sorry, I could not generate a response.';
 
         res.json({ reply });
     } catch (error) {
