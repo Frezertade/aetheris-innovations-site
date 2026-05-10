@@ -350,10 +350,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function initChatWidget() {
   // Suggested questions to lower the "what do I ask?" barrier
   const SUGGESTED_QUESTIONS = [
-    'How much does a website cost?',
-    'What does the AI chatbot do?',
-    'How fast can you launch?',
-    'Book a call'
+    'What is Money Magnet AI?',
+    'How can AI help me get more leads?',
+    'Can you automate my follow-up?',
+    'Book a revenue audit'
   ];
 
   // Create chat widget HTML
@@ -361,8 +361,8 @@ function initChatWidget() {
     <div id="chat-widget" class="chat-widget">
       <div id="chat-welcome-bubble" class="chat-welcome-bubble" role="button" tabindex="0" aria-label="Open chat assistant">
         <button class="chat-welcome-close" aria-label="Dismiss">×</button>
-        <strong>👋 This is the AI chatbot we install on your site.</strong><br>
-        Try asking me about pricing or what we do!
+        <strong>👋 This is the AI revenue assistant we build for businesses.</strong><br>
+        Ask how Money Magnet AI captures leads and books calls.
       </div>
       <button id="chat-toggle" class="chat-toggle" aria-label="Open chat assistant">
         <svg class="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -389,7 +389,7 @@ function initChatWidget() {
         <div id="chat-messages" class="chat-messages">
           <div class="chat-message assistant">
             <div class="message-content">
-              Hi! 👋 I'm the Aetheris assistant — this is exactly the kind of AI chatbot we install on your site. I can help you learn about our websites, pricing, or book a call. How can I help?
+              Hi! 👋 I'm the Aetheris assistant — this is the kind of AI lead-capture experience we build into Money Magnet AI. I can explain our revenue systems, automation, custom software, or help you book a free audit. How can I help?
             </div>
           </div>
         </div>
