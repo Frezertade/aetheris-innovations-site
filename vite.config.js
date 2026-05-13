@@ -15,6 +15,7 @@ export default defineConfig({
                 scale: resolve(__dirname, 'products/aetheris-scale/index.html'),
                 build: resolve(__dirname, 'products/aetheris-build/index.html'),
                 onlinePresence: resolve(__dirname, 'products/online-presence/index.html'),
+                onlinePresenceNew: resolve(__dirname, 'online-presence.html'),
                 medspaMoneyMagnetDemo: resolve(__dirname, 'demos/medspa-money-magnet/index.html'),
             },
         },
