@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started — Aetheris Online Presence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,30..100,0..1;1,9..144,300..700,30..100,0..1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Geist', sans-serif; background: #fafaf9; color: #1a1a1a; line-height: 1.6; }
+    .container { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem; }
+    h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    p.sub { color: #666; margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    input, select, textarea {
+      width: 100%; padding: 0.75rem; border: 1px solid #ddd; background: #fff;
+      font-family: 'Geist', sans-serif; font-size: 0.95rem; color: #1a1a1a;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #B87333; }
+    textarea { min-height: 100px; resize: vertical; }
+    .tier-select { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .tier-option {
+      border: 2px solid #e5e5e5; padding: 1rem; text-align: center; cursor: pointer;
+      transition: all 0.2s; background: #fff;
+    }
+    .tier-option:hover { border-color: #B87333; }
+    .tier-option.selected { border-color: #1a1a1a; background: #1a1a1a; color: #fff; }
+    .tier-option .tier-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1rem; }
+    .tier-option .tier-price { font-size: 0.8rem; margin-top: 0.3rem; opacity: 0.8; }
+    .tier-option.selected .tier-price { color: #B87333; opacity: 1; }
+    button[type="submit"] {
+      width: 100%; padding: 1rem; background: #1a1a1a; color: #fff; border: none;
+      font-family: 'Geist', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer;
+      transition: background 0.2s;
+    }
+    button[type="submit"]:hover { background: #333; }
+    button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
+    .required { color: #B87333; }
+    @media (max-width: 480px) {
+      .tier-select { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Let's build your online presence.</h1>
+    <p class="sub">Fill this out and book your free strategy call. We'll have a plan for you in 30 minutes.</p>
+
+    <form id="intakeForm" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="tier" id="tierInput" value="" />
+
+      <div class="form-group">
+        <label>Choose your package <span class="required">*</span></label>
+        <div class="tier-select">
+          <div class="tier-option" data-tier="Starter" onclick="selectTier(this)">
+            <div class="tier-name">Starter</div>
+            <div class="tier-price">$499 setup · $99/mo</div>
+          </div>
+          <div class="tier-option" data-tier="Growth" onclick="selectTier(this)">
+            <div class="tier-name">Growth</div>
+            <div class="tier-price">$1,500 setup · $199/mo</div>
+          </div>
+          <div class="tier-option" data-tier="Authority" onclick="selectTier(this)">
+            <div class="tier-name">Authority</div>
+            <div class="tier-price">$3,500 setup · $499/mo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <div class="form-group">
+        <label for="business">Business name <span class="required">*</span></label>
+        <input type="text" id="business" name="business" required />
+      </div>
+
+      <div class="form-group">
+        <label for="industry">Industry / type of business <span class="required">*</span></label>
+        <input type="text" id="industry" name="industry" placeholder="e.g. Roofing, Dental, HVAC, Restaurant" required />
+      </div>
+
+      <div class="form-group">
+        <label for="website">Current website (if any)</label>
+        <input type="url" id="website" name="website" placeholder="https://..." />
+      </div>
+
+      <div class="form-group">
+        <label for="location">City / service area <span class="required">*</span></label>
+        <input type="text" id="location" name="location" placeholder="e.g. Harrisburg, PA" required />
+      </div>
+
+      <div class="form-group">
+        <label for="challenges">What's your biggest challenge online right now?</label>
+        <textarea id="challenges" name="challenges" placeholder="No website? No leads? Bad reviews? Something else?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="goals">What would a successful online presence look like for you in 6 months?</label>
+        <textarea id="goals" name="goals" placeholder="More calls? More form submissions? Better Google ranking?"></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">Submit & book strategy call →</button>
+      <div id="formStatus" style="margin-top:1rem;text-align:center;font-size:0.9rem;color:#666;"></div>
+    </form>
+  </div>
+
+  <script>
+    const BOOKING_LINK = 'https://calendar.app.google/JajCvPZdws3fpAL18';
+    const API_ENDPOINT = '/api/online-presence-intake';
+
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    function selectTier(el) {
+      document.querySelectorAll('.tier-option').forEach(opt => opt.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('tierInput').value = el.dataset.tier;
+    }
+
+    // Auto-select from URL or default to Growth
+    const urlTier = getQueryParam('tier');
+    if (urlTier) {
+      const tierEl = document.querySelector('[data-tier="' + urlTier.charAt(0).toUpperCase() + urlTier.slice(1) + '"]');
+      if (tierEl) tierEl.click();
+    } else {
+      document.querySelector('[data-tier="Growth"]').click();
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const status = document.getElementById('formStatus');
+      const form = e.target;
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.textContent = '';
+
+      const payload = {
+        tier: form.tier.value,
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        business: form.business.value,
+        industry: form.industry.value,
+        website: form.website.value,
+        location: form.location.value,
+        challenges: form.challenges.value,
+        goals: form.goals.value,
+        source: 'online_presence_page'
+      };
+
+      try {
+        const response = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && data.ok) {
+          status.innerHTML = '<span style="color:#2d7d46;">✓ Received! Redirecting to booking...</span>';
+          setTimeout(() => {
+            window.location.href = BOOKING_LINK;
+          }, 1200);
+        } else {
+          throw new Error(data.error || 'Submission failed');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Submit & book strategy call →';
+        status.innerHTML = '<span style="color:#c0392b;">Something went wrong. Please email hello@aetherisinnovations.com</span>';
+        console.error('Intake submit error:', err);
+      }
+    }
+  </script>
+</body>
+</html>

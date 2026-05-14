@@ -186,7 +186,7 @@ Review the month. Which posts performed best? Double down on that format in Mont
 | DMs received                  | 1-2           | 5-10           |
 | Website visits from social    | 10+           | 50+            |
 | Blog page views               | 20+           | 100+           |
-| Calendly bookings from content| 0-1           | 2-4            |
+| Google Calendar bookings from content| 0-1           | 2-4            |
 
 ---
 

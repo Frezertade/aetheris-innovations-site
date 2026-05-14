@@ -6,6 +6,10 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/api/chat", "destination": "/api/chat" },
+    { "source": "/api/intake-audit", "destination": "/api/intake-audit" },
+    { "source": "/api/delivery-pipeline", "destination": "/api/delivery-pipeline" },
+    { "source": "/api/human-review", "destination": "/api/human-review" },
+    { "source": "/human-review", "destination": "/human-review.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/privacy/", "destination": "/privacy.html" },

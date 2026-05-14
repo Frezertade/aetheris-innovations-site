@@ -512,8 +512,8 @@ const CXTracking = {
         });
       }
 
-      // Track calendar bookings (Google Calendar — was Calendly)
-      if (href && (href.includes('calendar.app.google') || href.includes('calendar.google.com') || href.includes('calendly'))) {
+      // Track calendar bookings (Google Calendar)
+      if (href && (href.includes('calendar.app.google') || href.includes('calendar.google.com'))) {
         Analytics.conversion('calendar_booking_click');
       }
     });

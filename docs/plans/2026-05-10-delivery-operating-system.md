@@ -38,7 +38,7 @@ Recommended stack:
 - Knowledge: markdown/business FAQ doc first; vector DB only if needed
 - Lead storage: Google Sheets/Airtable first; CRM integration later
 - Automation: n8n/Zapier/Make
-- Booking: Calendly/Cal.com/Google Calendar appointment schedule
+- Booking: Google Calendar appointment schedule
 - Email: Gmail SMTP/Resend/Postmark depending customer maturity
 - Reporting: Google Sheet dashboard + weekly email summary
 
