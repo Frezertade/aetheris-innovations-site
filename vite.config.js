@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync, writeFileSync } from 'fs';
+import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync, writeFileSync, statSync } from 'fs';
 
 export default defineConfig({
     build: {
@@ -64,6 +64,24 @@ export default defineConfig({
                 // Copy style.css to dist root for blog pages
                 copyFileSync(resolve(__dirname, 'style.css'), resolve(__dirname, 'dist/style.css'));
                 console.log('style.css copied to dist/');
+
+                // Copy static SEO solution pages to dist/solutions so Vercel serves
+                // every generated industry landing page from the production build.
+                const copyDir = (srcDir, destDir) => {
+                    if (!existsSync(srcDir)) return;
+                    mkdirSync(destDir, { recursive: true });
+                    for (const entry of readdirSync(srcDir)) {
+                        const srcPath = resolve(srcDir, entry);
+                        const destPath = resolve(destDir, entry);
+                        if (statSync(srcPath).isDirectory()) {
+                            copyDir(srcPath, destPath);
+                        } else {
+                            copyFileSync(srcPath, destPath);
+                        }
+                    }
+                };
+                copyDir(resolve(__dirname, 'solutions'), resolve(__dirname, 'dist/solutions'));
+                console.log('SEO solution pages copied to dist/solutions');
             }
         }
     ]
