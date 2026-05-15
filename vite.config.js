@@ -12,6 +12,7 @@ export default defineConfig({
                 terms: resolve(__dirname, 'terms.html'),
                 intake: resolve(__dirname, 'intake.html'),
                 leadLeakAudit: resolve(__dirname, 'lead-leak-audit.html'),
+                virtualCompanyAudit: resolve(__dirname, 'virtual-company-audit.html'),
                 thankYou: resolve(__dirname, 'thank-you.html'),
                 products: resolve(__dirname, 'products/index.html'),
                 flow: resolve(__dirname, 'products/aetheris-flow/index.html'),
