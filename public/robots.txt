@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+# Google AI Overviews / AI Mode use normal Google Search crawling and indexing;
+# no special AI-only file is required. These explicit allows preserve access for
+# other AI/browser-agent crawlers that may inspect public marketing pages.
 User-agent: GPTBot
 Allow: /
 
