@@ -22,6 +22,7 @@ export default defineConfig({
                 onlinePresence: resolve(__dirname, 'products/online-presence/index.html'),
                 onlinePresenceNew: resolve(__dirname, 'online-presence.html'),
                 medspaMoneyMagnetDemo: resolve(__dirname, 'demos/medspa-money-magnet/index.html'),
+                homeServicesAiScheduling: resolve(__dirname, 'home-services-ai-scheduling/index.html'),
             },
         },
     },
