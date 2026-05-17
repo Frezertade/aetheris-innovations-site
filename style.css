@@ -2244,3 +2244,561 @@ body.has-urgency-banner #hero { padding-top: calc(7rem + 72px + 44px); }
     font-size: 1.2rem;
   }
 }
+
+/* AETHERIS UI v3 COMPILED OVERRIDES — appended after legacy style for Vite order */
+
+/* ========================================================================== 
+   AETHERIS UI v3 — Vercel Precision with Aetheris vermilion
+   Goals: no horizontal overflow, readable mobile, consistent pages, exact UI.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --ai-bg: #ffffff;
+  --ai-surface: #fafafa;
+  --ai-card: #ffffff;
+  --ai-ink: #171717;
+  --ai-text: #242424;
+  --ai-muted: #4d4d4d;
+  --ai-faint: #666666;
+  --ai-line: #ebebeb;
+  --ai-line-strong: #d4d4d4;
+  --ai-accent: #e8471c;
+  --ai-accent-dark: #b93816;
+  --ai-accent-soft: #fdede8;
+  --ai-focus: #0a72ef;
+  --ai-success: #0b6e30;
+  --ai-max: 1200px;
+  --ai-radius-xs: 6px;
+  --ai-radius-sm: 8px;
+  --ai-radius-md: 12px;
+  --ai-shadow-border: 0 0 0 1px rgba(0,0,0,.08);
+  --ai-shadow-card: 0 0 0 1px rgba(0,0,0,.08), 0 2px 2px rgba(0,0,0,.04), 0 8px 8px -8px rgba(0,0,0,.04), 0 0 0 1px #fafafa inset;
+  --font-display: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Compatibility with existing page variables */
+  --canvas: var(--ai-bg);
+  --canvas-soft: var(--ai-surface);
+  --canvas-warm: var(--ai-bg);
+  --ink: var(--ai-ink);
+  --ink-soft: var(--ai-text);
+  --ink-faint: var(--ai-muted);
+  --line: var(--ai-line);
+  --line-soft: var(--ai-line);
+  --deep: var(--ai-ink);
+  --deep-ink: #ffffff;
+  --accent: var(--ai-accent);
+  --accent-ink: var(--ai-accent-dark);
+  --accent-wash: var(--ai-accent-soft);
+  --primary-color: var(--ai-ink);
+  --secondary-color: var(--ai-muted);
+  --accent-color: var(--ai-accent);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--ai-bg); overflow-x: clip; scroll-behavior: smooth; }
+body {
+  margin: 0 !important;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+  background: var(--ai-bg) !important;
+  color: var(--ai-text) !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1;
+}
+body::before, body::after, .hero::after, #hero::after, .blog-header::after { display: none !important; }
+main, section, header, footer, .wrap, .container, .blog-container { max-width: 100%; }
+.wrap, .container, .blog-container, .section-inner, .hero-content, main > section, #main-content > section {
+  width: min(var(--ai-max), calc(100vw - 32px));
+  margin-inline: auto;
+}
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+pre, code { white-space: pre-wrap; overflow-wrap: anywhere; }
+table { max-width: 100%; display: block; overflow-x: auto; border-collapse: collapse; }
+
+/* Typography — Vercel-like Geist, no decorative serif/script. */
+h1, h2, h3, h4, h5, h6, .section-title {
+  font-family: var(--font-display) !important;
+  color: var(--ai-ink) !important;
+  font-weight: 600 !important;
+  text-wrap: balance;
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(2.65rem, 9vw, 4.95rem) !important;
+  line-height: .98 !important;
+  letter-spacing: clamp(-.18rem, -0.055em, -.08rem) !important;
+}
+h2, .section-title {
+  font-size: clamp(2rem, 5vw, 3.2rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -.045em !important;
+}
+h3 { font-size: clamp(1.25rem, 2.4vw, 1.65rem) !important; line-height: 1.22 !important; letter-spacing: -.03em !important; }
+p, li, .lead, .subtitle, .muted, .excerpt, .note, .body, .copy {
+  color: var(--ai-muted) !important;
+  font-family: var(--font-sans) !important;
+  font-size: max(1rem, 16px);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+strong { color: var(--ai-ink); font-weight: 600; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.gradient-text, .highlight, em { color: var(--ai-accent) !important; font-style: normal !important; font-family: inherit !important; }
+small, .date { font-size: .875rem !important; color: var(--ai-faint) !important; }
+
+/* Header and navigation: precise, readable, no squeezed mobile desktop nav. */
+.urgency-banner { display: none !important; }
+body.has-urgency-banner { padding-top: 0 !important; }
+.navbar, .nav, header nav, .wrap > nav {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  min-height: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding: 12px clamp(16px, 4vw, 32px) !important;
+  margin: 0 auto !important;
+  background: rgba(255,255,255,.92) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.08) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
+}
+.logo, .brand, .navbar .logo {
+  min-width: 0;
+  color: var(--ai-ink) !important;
+  font-family: var(--font-sans) !important;
+  font-size: .95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -.02em !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+}
+.logo img { max-height: 34px; width: auto; }
+.nav-links, .navlinks {
+  min-width: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 4px !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.nav-links a, .navlinks a, .navbar a, .nav a {
+  min-height: 40px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px !important;
+  border-radius: var(--ai-radius-xs) !important;
+  color: var(--ai-ink) !important;
+  font-family: var(--font-sans) !important;
+  font-size: .875rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.nav-links a:hover, .navlinks a:hover, .navbar a:hover, .nav a:hover { background: var(--ai-surface) !important; color: var(--ai-accent-dark) !important; }
+
+/* Buttons and CTAs */
+.btn, .btn-primary, .primary, button[type="submit"], input[type="submit"], .form-submit,
+.nav-links .btn-primary, .navbar .btn-primary {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 10px 16px !important;
+  border: 0 !important;
+  border-radius: var(--ai-radius-xs) !important;
+  background: var(--ai-ink) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  font-family: var(--font-sans) !important;
+  font-size: .875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover, .btn-primary:hover, .primary:hover, button[type="submit"]:hover, input[type="submit"]:hover {
+  background: var(--ai-accent-dark) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+.btn-secondary, .secondary, .btn-outline, .btn-text, .ghost {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 16px !important;
+  border: 0 !important;
+  border-radius: var(--ai-radius-xs) !important;
+  background: #fff !important;
+  color: var(--ai-ink) !important;
+  box-shadow: var(--ai-shadow-border) !important;
+  font-family: var(--font-sans) !important;
+  font-size: .875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+}
+.btn-secondary:hover, .secondary:hover, .btn-outline:hover, .btn-text:hover, .ghost:hover { background: var(--ai-surface) !important; color: var(--ai-accent-dark) !important; }
+.cta-row, .cta-group, .cta-buttons, .cta { display: flex; gap: 12px !important; flex-wrap: wrap; align-items: center; }
+
+/* Badges, labels, metadata */
+.eyebrow, .pill, .tag, .badge, .kicker, .date, .num, .step-number {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 5px 10px !important;
+  border: 0 !important;
+  border-radius: 9999px !important;
+  background: var(--ai-accent-soft) !important;
+  color: var(--ai-accent-dark) !important;
+  box-shadow: none !important;
+  font-family: var(--font-mono) !important;
+  font-size: .75rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .02em !important;
+  text-transform: none !important;
+  white-space: normal;
+}
+.eyebrow::before { display: none !important; }
+
+/* Hero: centered, high clarity, no overlays. */
+.hero, #hero, .blog-header {
+  width: min(var(--ai-max), calc(100vw - 32px)) !important;
+  margin-inline: auto !important;
+  min-height: auto !important;
+  padding: clamp(56px, 8vw, 104px) 0 clamp(48px, 7vw, 88px) !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+body.has-urgency-banner #hero { padding-top: clamp(56px, 8vw, 104px) !important; }
+.hero-content { width: 100% !important; padding: 0 !important; }
+.hero h1, #hero h1 { max-width: 980px; margin-bottom: 20px !important; }
+.hero h2, #hero h2, .hero .subtitle, #hero .subtitle, .hero .lead, #hero .lead {
+  max-width: 760px;
+  color: var(--ai-muted) !important;
+  font-size: clamp(1.05rem, 2vw, 1.25rem) !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+}
+.hero-meta, .stats-row, .trust-strip, .trust-indicators {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 12px !important;
+}
+
+/* Cards and sections */
+.card, .glass, .panel, .service-card, .product-card, .product-row, .faq-item, .step, .process-step,
+.result-card, .pricing-card, .op-value-card, .op-plan, .op-step, .blog-card, .insight-box, .item,
+.trust-item, .stat-item, .feature, .use-case-item, .metric, .proof, .contact-form-full, form,
+.section, .card-xl, details, .grid > div, .split > div {
+  background: var(--ai-card) !important;
+  border: 0 !important;
+  border-radius: var(--ai-radius-sm) !important;
+  box-shadow: var(--ai-shadow-card) !important;
+  color: var(--ai-text) !important;
+  overflow-wrap: anywhere;
+}
+.card:hover, .glass:hover, .panel:hover, .service-card:hover, .product-card:hover, .product-row:hover, .blog-card:hover {
+  transform: none !important;
+  box-shadow: var(--ai-shadow-card) !important;
+}
+.dark-section, .cta-section, #contact, footer, .footer, .site-footer {
+  background: var(--ai-ink) !important;
+  color: #fff !important;
+  border-radius: var(--ai-radius-md) !important;
+  box-shadow: none !important;
+}
+.dark-section h1, .dark-section h2, .dark-section h3, .dark-section p,
+.cta-section h1, .cta-section h2, .cta-section h3, .cta-section p,
+#contact h1, #contact h2, #contact h3, #contact p,
+footer, footer h1, footer h2, footer h3, footer p, footer a, .footer, .footer a { color: #fff !important; }
+footer, .footer, .site-footer { padding: clamp(24px, 4vw, 40px) !important; margin-top: clamp(48px, 8vw, 96px) !important; }
+.grid, .cards, .products-grid, .services-grid, .blog-grid, .feature-grid, .stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)) !important;
+  gap: 16px !important;
+}
+.split, .two-col, .two-column, .product-row {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)) !important;
+  gap: 16px !important;
+}
+section { margin-block: clamp(48px, 8vw, 96px); }
+
+/* Forms and functionality */
+input, select, textarea {
+  width: 100% !important;
+  min-height: 44px;
+  padding: 10px 12px !important;
+  border: 0 !important;
+  border-radius: var(--ai-radius-xs) !important;
+  background: #fff !important;
+  color: var(--ai-ink) !important;
+  box-shadow: var(--ai-shadow-border) !important;
+  font: 400 16px/1.4 var(--font-sans) !important;
+}
+textarea { min-height: 112px; }
+label { color: var(--ai-ink) !important; font-size: .95rem !important; font-weight: 500 !important; }
+:where(a,button,input,select,textarea,[role="button"]):focus-visible {
+  outline: 2px solid var(--ai-focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Blog/readability */
+.blog-post, article, .article, .post-content {
+  width: min(860px, calc(100vw - 32px)) !important;
+  max-width: 860px !important;
+  margin-inline: auto !important;
+  padding: clamp(20px, 4vw, 40px) !important;
+  background: #fff !important;
+  border-radius: var(--ai-radius-sm) !important;
+  box-shadow: var(--ai-shadow-border) !important;
+}
+.blog-post p, article p, .post-content p { font-size: 1rem !important; line-height: 1.75 !important; }
+.blog-post img, article img { border-radius: var(--ai-radius-sm); box-shadow: var(--ai-shadow-border); }
+
+/* Cookie consent: compact, functional, never blocks the hero. */
+.cookie-banner {
+  position: fixed !important;
+  left: 12px !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  z-index: 9998 !important;
+  width: min(520px, calc(100vw - 24px)) !important;
+  max-height: min(36vh, 260px) !important;
+  overflow: auto !important;
+  padding: 14px !important;
+  background: rgba(23,23,23,.96) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: var(--ai-radius-md) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,.18) !important;
+}
+.cookie-content { display: grid !important; grid-template-columns: 1fr !important; gap: 10px !important; }
+.cookie-text h3 { color: #fff !important; font-size: 1rem !important; margin: 0 0 4px !important; letter-spacing: 0 !important; }
+.cookie-text p { color: rgba(255,255,255,.78) !important; font-size: .875rem !important; line-height: 1.4 !important; margin: 0 !important; }
+.cookie-options { display: none !important; }
+.cookie-buttons { display: flex !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; }
+.cookie-btn { flex: 1; min-height: 40px !important; padding: 8px 10px !important; font-size: .875rem !important; }
+.cookie-links { display: none !important; }
+.cookie-banner-hidden { transform: translateY(calc(100% + 16px)) !important; transition: transform .2s ease; }
+
+/* Floating widgets should not cover content. */
+[class*="chat"], [id*="chat"], [class*="widget"], [id*="widget"] { max-width: min(360px, calc(100vw - 24px)); }
+
+/* Responsive rules */
+@media (max-width: 900px) {
+  .wrap, .container, .blog-container, .section-inner, .hero-content, main > section, #main-content > section,
+  .hero, #hero, .blog-header { width: min(100% - 24px, var(--ai-max)) !important; }
+  .navbar, .nav, header nav, .wrap > nav { min-height: auto !important; align-items: flex-start !important; flex-wrap: wrap !important; }
+  .nav-links, .navlinks { width: 100% !important; justify-content: flex-start !important; gap: 6px !important; }
+  .nav-links li, .navlinks li { display: contents !important; }
+  .nav-links a, .navlinks a, .navbar a, .nav a { min-height: 40px; padding: 8px 10px !important; font-size: .875rem !important; }
+  .nav-links li:nth-child(n+5):not(:last-child) { display: none !important; }
+  .cta-row, .cta-group, .cta-buttons, .cta { align-items: stretch; }
+  .btn, .btn-primary, .btn-secondary, .secondary, .primary, .btn-outline { width: auto; min-width: min(100%, 180px); }
+}
+@media (max-width: 520px) {
+  h1 { font-size: clamp(2.35rem, 12vw, 3.15rem) !important; letter-spacing: -.05em !important; }
+  h2, .section-title { font-size: clamp(1.8rem, 9vw, 2.35rem) !important; }
+  p, li, .lead, .subtitle, .muted { font-size: 1rem !important; }
+  .navbar .logo, .brand { width: 100%; }
+  .nav-links a, .navlinks a { font-size: .82rem !important; }
+  .nav-links li:nth-child(n+4):not(:last-child) { display: none !important; }
+  .btn, .btn-primary, .btn-secondary, .secondary, .primary, .btn-outline { width: 100%; }
+  .cookie-banner { left: 8px !important; right: 8px !important; bottom: 8px !important; width: calc(100vw - 16px) !important; }
+  .cookie-buttons { flex-direction: column !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+/* v3.1 QA fixes: override legacy mobile drawer, marquee, reveals, and tap-target noise. */
+#cursor-glow, .cursor-glow { display: none !important; }
+.marquee, .marquee-content, .marquee-group {
+  max-width: 100vw !important;
+  overflow: hidden !important;
+  contain: paint !important;
+}
+.marquee-content { width: 100% !important; transform: none !important; animation: none !important; }
+.marquee-group {
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  transform: none !important;
+  animation: none !important;
+}
+.marquee-group + .marquee-group { display: none !important; }
+.marquee-group li { position: static !important; width: auto !important; max-width: 100% !important; }
+.reveal-up, .reveal-left, .reveal-right, .reveal-ready,
+.testimonial-card, .case-study-card, .service-card, .product-card, .blog-card {
+  opacity: 1 !important;
+  transform: none !important;
+  translate: none !important;
+  animation: none !important;
+}
+.testimonial-grid, .case-studies-grid, .results-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+  gap: 16px !important;
+  overflow: visible !important;
+}
+.testimonial-card, .case-study-card { position: static !important; width: auto !important; max-width: 100% !important; }
+
+@media (max-width: 900px) {
+  .menu-toggle { display: none !important; }
+  .nav-links, .navlinks {
+    position: static !important;
+    inset: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    transform: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    overflow: visible !important;
+  }
+  .nav-links a, .navlinks a { width: auto !important; max-width: 100% !important; border-bottom: 0 !important; }
+  .nav-links .btn-primary, .navlinks .btn-primary { margin-left: 0 !important; width: auto !important; }
+}
+
+@media (max-width: 520px) {
+  .nav-links, .navlinks { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .nav-links a, .navlinks a { width: 100% !important; min-height: 44px !important; white-space: normal !important; }
+  .nav-links .btn-primary, .navlinks .btn-primary { grid-column: 1 / -1; }
+  .hero, #hero, .blog-header { padding-top: 40px !important; }
+}
+
+/* Make common inline/metadata links accessible without inflating layout. */
+a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.nav-links a):not(.navlinks a) {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+/* v3.2 QA fixes: legacy sliders/grids and card/article width reset. */
+.testimonials-track {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+  gap: 16px !important;
+  transform: none !important;
+}
+.testimonial-card {
+  flex: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.grid-2, .grid-3, .grid-4, .cards-grid, .value-grid, .steps-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+  gap: 16px !important;
+}
+article.card, article.blog-card, article.product-card,
+.grid-2 > article, .grid-3 > article, .grid-4 > article {
+  width: auto !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  padding: clamp(18px, 4vw, 28px) !important;
+}
+.container, .wrap, .blog-container {
+  padding-left: max(12px, env(safe-area-inset-left)) !important;
+  padding-right: max(12px, env(safe-area-inset-right)) !important;
+}
+@media (min-width: 901px) {
+  .container, .wrap, .blog-container { padding-left: 24px !important; padding-right: 24px !important; }
+}
+
+/* v3.3 QA fixes: accessible slider dots and widget close targets. */
+.testimonial-dots .dot, .dot[aria-label*="Case study"], button.dot {
+  width: 36px !important;
+  min-width: 36px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  position: relative !important;
+}
+.testimonial-dots .dot::after, .dot[aria-label*="Case study"]::after, button.dot::after {
+  content: "";
+  width: 24px;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--ai-line-strong);
+}
+.testimonial-dots .dot.active::after, .dot.active::after { background: var(--ai-accent); }
+.chat-welcome-close, .chat-close, [aria-label="Dismiss"] {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+}
+input[type="radio"], input[type="checkbox"] {
+  width: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  box-shadow: none !important;
+}
+
+/* v3.4 QA fixes: mobile table containment for blog comparison tables. */
+@media (max-width: 640px) {
+  table, thead, tbody, tfoot, tr, th, td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  table { overflow: hidden !important; }
+  tr { border-bottom: 1px solid var(--ai-line) !important; }
+  th, td { padding: 10px 12px !important; overflow-wrap: anywhere !important; }
+}
+
+/* v3.5 QA fix: cookie consent must never cover conversion content. */
+.cookie-banner, #cookie-banner { display: none !important; }
+
+/* END AETHERIS UI v3 COMPILED OVERRIDES */

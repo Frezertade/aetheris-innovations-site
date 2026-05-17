@@ -1,29 +1,35 @@
 ---
 version: alpha
-name: Aetheris Main Street Modernist
-description: Premium AI revenue systems for local businesses — warm editorial trust with precise SaaS/product UI.
+name: Aetheris Vercel Precision
+description: "Vercel-inspired infrastructure minimalism translated into Aetheris colors: white canvas, Geist typography, shadow-border surfaces, vermilion conversion accents, and responsive-first revenue pages."
 colors:
-  primary: "#11100E"
-  secondary: "#34302A"
+  primary: "#171717"
+  secondary: "#4D4D4D"
   tertiary: "#E8471C"
-  neutral: "#F6F0E6"
-  surface: "#FFFAF2"
-  muted: "#756D60"
-  indigo: "#302B8C"
+  neutral: "#FFFFFF"
+  surface: "#FAFAFA"
+  line: "#EBEBEB"
+  focus: "#0A72EF"
   success: "#0B6E30"
 typography:
   display-xl:
-    fontFamily: Fraunces
-    fontSize: 7rem
-    fontWeight: 520
-    lineHeight: 0.96
-    letterSpacing: "-0.045em"
-  display-md:
-    fontFamily: Fraunces
-    fontSize: 4.5rem
-    fontWeight: 520
+    fontFamily: Geist
+    fontSize: 4.75rem
+    fontWeight: 600
     lineHeight: 1
-    letterSpacing: "-0.04em"
+    letterSpacing: "-0.055em"
+  display-md:
+    fontFamily: Geist
+    fontSize: 3rem
+    fontWeight: 600
+    lineHeight: 1.08
+    letterSpacing: "-0.045em"
+  heading-sm:
+    fontFamily: Geist
+    fontSize: 1.5rem
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: "-0.03em"
   body-lg:
     fontFamily: Geist
     fontSize: 1.125rem
@@ -37,95 +43,112 @@ typography:
   label:
     fontFamily: Geist Mono
     fontSize: 0.75rem
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: "0.08em"
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: "0.04em"
 rounded:
-  sm: 10px
-  md: 18px
-  pill: 999px
-spacing:
   xs: 6px
-  sm: 10px
+  sm: 8px
+  md: 12px
+  pill: 9999px
+spacing:
+  xs: 4px
+  sm: 8px
   md: 16px
-  lg: 28px
-  xl: 48px
+  lg: 32px
+  xl: 64px
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
-    textColor: "#FFF7EE"
-    rounded: "{rounded.pill}"
-    padding: 14px
+    textColor: "#FFFFFF"
+    rounded: "{rounded.xs}"
+    padding: 12px
   button-primary-hover:
     backgroundColor: "#B93816"
     textColor: "#FFFFFF"
-    rounded: "{rounded.pill}"
-    padding: 14px
+    rounded: "{rounded.xs}"
+    padding: 12px
+  button-secondary:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.xs}"
+    padding: 12px
   card:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.sm}"
+    padding: 24px
+  surface-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.secondary}"
-    rounded: "{rounded.md}"
-    padding: 28px
-  badge:
-    backgroundColor: "#FFFFFF"
+    rounded: "{rounded.sm}"
+    padding: 24px
+  divider:
+    backgroundColor: "{colors.line}"
     textColor: "{colors.primary}"
+    rounded: "{rounded.xs}"
+    padding: 4px
+  badge:
+    backgroundColor: "#FDEDE8"
+    textColor: "#B93816"
     rounded: "{rounded.pill}"
     padding: 8px
-  badge-muted:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.muted}"
-    rounded: "{rounded.pill}"
-    padding: 8px
-  ai-panel:
-    backgroundColor: "{colors.indigo}"
-    textColor: "#FFFFFF"
-    rounded: "{rounded.md}"
-    padding: 28px
-  accent-pill:
+  accent-label:
     backgroundColor: "{colors.tertiary}"
     textColor: "{colors.primary}"
     rounded: "{rounded.pill}"
     padding: 8px
-  success-pill:
-    backgroundColor: "{colors.success}"
-    textColor: "#FFFFFF"
+  success-badge:
+    backgroundColor: "#EAF7EE"
+    textColor: "{colors.success}"
     rounded: "{rounded.pill}"
+    padding: 8px
+  focus-ring:
+    backgroundColor: "#FFFFFF"
+    textColor: "{colors.focus}"
+    rounded: "{rounded.xs}"
     padding: 8px
 ---
 
 ## Overview
 
-Aetheris should feel like a founder-led AI systems studio local businesses can trust with revenue-critical work. The visual posture combines Stripe's premium precision, Linear's technical confidence, Vercel's restraint, and a warmer editorial layer that feels human rather than cold enterprise SaaS.
+Aetheris should now feel like a revenue-systems infrastructure company: calm, precise, technical, and trustworthy. The reference posture is Vercel — not copied visually, but translated through Aetheris. The site should be mostly white with restrained near-black text, exact spacing, small amounts of warm vermilion for conversion moments, and surfaces built with shadow-as-border rather than heavy outlines or decorative gradients.
+
+The goal is to remove the previous over-designed editorial treatment and replace it with product-grade clarity: every page should scan quickly on mobile, tablet, and desktop; every CTA should have a clear hit target; generated pages and blog posts should feel like the same system as the homepage.
 
 ## Colors
 
-- **Primary (#11100E):** deep ink for navigation, major CTAs, and high-trust dark panels.
-- **Tertiary (#E8471C):** the only hot accent; use for conversion moments, emphasis, dots, active states, and selected metrics.
-- **Neutral (#F6F0E6):** warm canvas that separates Aetheris from generic blue SaaS.
-- **Surface (#FFFAF2):** card and form surface; usually translucent over the warm canvas.
-- **Indigo (#302B8C):** secondary technical accent for AI/product moments, never the main CTA.
-- **Success (#108C3D):** status, checks, and positive validation.
+- **Primary (#171717):** Vercel-style near-black for headings, navigation, dark CTAs, and high-emphasis text.
+- **Secondary (#4D4D4D):** body and explanatory copy. Avoid low-contrast beige text.
+- **Tertiary (#E8471C):** Aetheris vermilion. Use only for conversion accents, active states, badges, and key highlight words.
+- **Neutral (#FFFFFF):** the primary canvas. White space is the design.
+- **Surface (#FAFAFA):** subtle section backgrounds, inset panels, and code-like surfaces.
+- **Line (#EBEBEB):** Vercel-style ring borders and dividers.
+- **Focus (#0A72EF):** accessible keyboard focus ring.
+- **Success (#0B6E30):** validation, checks, and positive states.
 
 ## Typography
 
-Fraunces is the expressive display face for headlines and high-emotion statements. Geist is the operating-system voice for body, navigation, forms, and product surfaces. Geist Mono is reserved for labels, technical tags, metrics, and process steps. Display text should be tight and confident; body text should breathe.
+Use Geist Sans everywhere except technical labels, small metadata, and code-like values, which use Geist Mono. Display text is compressed with negative letter-spacing. Body copy is not tiny: minimum readable body size is 16px, and navigation/labels should not fall below 12px. Avoid decorative serif headlines, script styling, excessive uppercase, and crowded mono text.
 
 ## Layout
 
-Use max-width 1180px for most content. Lead with one clear business idea per section. Avoid generic feature grids unless the section truly needs comparison. Favor large hero statements, compact proof rows, and cards that feel like product surfaces rather than decorative boxes.
+Use Vercel-style restraint: centered containers, 8px grid, wide white space, and 2–3 column grids that collapse cleanly to one column on mobile. Every page must fit within the viewport with no horizontal scrolling at 390px, 768px, or desktop widths. Long blog/code content must wrap or scroll inside its own container, never push the whole page wider.
 
 ## Elevation & Depth
 
-Use shadow-as-border and blue-tinted soft elevation from Stripe/Vercel: subtle ring first, soft shadow second. Dark panels should be rare and used for CTAs, contact, or strategic contrast.
+Use shadow-as-border: `0 0 0 1px rgba(0,0,0,.08)` for cards and panels. Add only whisper-level elevation for featured surfaces. Avoid heavy glassmorphism, big blur glows, large colored shadows, and decorative blobs.
 
 ## Shapes
 
-Cards use 18px radius. Inputs use 14px radius. CTAs and badges use pill radius. Avoid oversized blobs, random glassmorphism, and heavy gradients.
+Buttons use a precise 6px radius like Vercel. Cards use 8–12px. Badges use full pills. Do not use oversized rounded rectangles everywhere. Touch targets must be at least 44px tall on mobile.
 
 ## Components
 
-Primary buttons are deep ink pills that turn vermilion on hover. Secondary buttons are warm white pills with a thin ring. Badges are mono uppercase pills. Cards are warm translucent surfaces with ring shadows. Forms must look calm, trustworthy, and high-conversion.
+Primary buttons are near-black rectangles with 6px radius and 44px minimum height. Hover may switch to Aetheris vermilion. Secondary buttons are white with shadow-border rings. Cards are white, compact, and grid-aligned. Badges are small but readable, with vermilion-tinted or neutral backgrounds. Navigation is sticky, white, and responsive; mobile should not squeeze the entire desktop nav into one row.
 
 ## Do's and Don'ts
 
-Do make every page feel like one system, including blog posts and generated solution pages. Do preserve SEO content and conversion CTAs. Do use the accent sparingly. Don't add fake dashboards or fake metrics. Don't use generic AI gradients, random icons, or low-contrast text. Don't leave standalone pages outside the design system.
+Do use white space, Geist, exact alignment, shadow-border cards, and Aetheris vermilion sparingly. Do check mobile first. Do keep every public page tied to the same global system. Do test navigation, forms, tap targets, and console errors.
+
+Don't use decorative serif/script typography, huge cream gradients, glass effects, giant pills for every button, tiny uppercase labels, or elements that cause horizontal overflow. Don't hide broken responsive behavior with `overflow-x: hidden` alone; fix max-width, wrapping, and tap targets.
