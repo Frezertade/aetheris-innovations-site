@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Premium 3D hero stage: injects a lightweight canvas on pages that do not
+  // already have one, so the cinematic identity travels across static routes.
+  const firstHero = document.querySelector('#hero, .hero, .op-hero, .page-hero, .product-hero');
+  if (firstHero && !document.getElementById('hero-canvas')) {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'hero-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    firstHero.prepend(canvas);
+  }
+
   // Intersection Observer for Scroll Animations
   const observerOptions = {
     threshold: 0.1,
@@ -228,8 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Draw glowing core
       const coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.min(width, height) * 0.15);
-      coreGrad.addColorStop(0, 'rgba(96, 165, 250, 0.25)');
-      coreGrad.addColorStop(0.5, 'rgba(192, 132, 252, 0.1)');
+      coreGrad.addColorStop(0, 'rgba(93, 235, 255, 0.32)');
+      coreGrad.addColorStop(0.45, 'rgba(215, 181, 109, 0.14)');
       coreGrad.addColorStop(1, 'transparent');
       ctx.fillStyle = coreGrad;
       ctx.beginPath();
@@ -299,9 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const orbPulse = 1 + 0.1 * Math.sin(time * 0.002);
       const orbSize = Math.min(width, height) * (mobile ? 0.06 : 0.05) * orbPulse;
       const orbGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, orbSize);
-      orbGrad.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
-      orbGrad.addColorStop(0.3, 'rgba(96, 165, 250, 0.8)');
-      orbGrad.addColorStop(0.7, 'rgba(192, 132, 252, 0.4)');
+      orbGrad.addColorStop(0, 'rgba(248, 244, 234, 0.98)');
+      orbGrad.addColorStop(0.3, 'rgba(93, 235, 255, 0.86)');
+      orbGrad.addColorStop(0.68, 'rgba(215, 181, 109, 0.38)');
       orbGrad.addColorStop(1, 'transparent');
       ctx.fillStyle = orbGrad;
       ctx.beginPath();

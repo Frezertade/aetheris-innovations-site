@@ -1,154 +1,171 @@
 ---
 version: alpha
-name: Aetheris Vercel Precision
-description: "Vercel-inspired infrastructure minimalism translated into Aetheris colors: white canvas, Geist typography, shadow-border surfaces, vermilion conversion accents, and responsive-first revenue pages."
+name: Aetheris Celestial Command
+description: "Premium cinematic AI-systems studio identity: obsidian command-room depth, platinum typography, aurora-cyan intelligence glow, champagne-gold trust accents, and layered 3D motion."
 colors:
-  primary: "#171717"
-  secondary: "#4D4D4D"
-  tertiary: "#E8471C"
-  neutral: "#FFFFFF"
-  surface: "#FAFAFA"
-  line: "#EBEBEB"
-  focus: "#0A72EF"
-  success: "#0B6E30"
+  primary: "#F8F4EA"
+  secondary: "#AAB6C8"
+  tertiary: "#5DEBFF"
+  neutral: "#050713"
+  surface: "#0B1020"
+  line: "#26314A"
+  focus: "#B9F6FF"
+  success: "#41F2B1"
+  gold: "#D7B56D"
+  violet: "#8A6CFF"
+  rose: "#FF5FA2"
 typography:
   display-xl:
-    fontFamily: Geist
-    fontSize: 4.75rem
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: "-0.055em"
+    fontFamily: Inter
+    fontSize: 5.8rem
+    fontWeight: 700
+    lineHeight: 0.94
+    letterSpacing: "-0.075em"
   display-md:
-    fontFamily: Geist
-    fontSize: 3rem
-    fontWeight: 600
-    lineHeight: 1.08
-    letterSpacing: "-0.045em"
+    fontFamily: Inter
+    fontSize: 3.35rem
+    fontWeight: 650
+    lineHeight: 1
+    letterSpacing: "-0.06em"
   heading-sm:
-    fontFamily: Geist
-    fontSize: 1.5rem
-    fontWeight: 600
-    lineHeight: 1.25
-    letterSpacing: "-0.03em"
+    fontFamily: Inter
+    fontSize: 1.6rem
+    fontWeight: 650
+    lineHeight: 1.15
+    letterSpacing: "-0.04em"
   body-lg:
-    fontFamily: Geist
-    fontSize: 1.125rem
+    fontFamily: Inter
+    fontSize: 1.15rem
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.72
   body-md:
-    fontFamily: Geist
+    fontFamily: Inter
     fontSize: 1rem
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.68
   label:
-    fontFamily: Geist Mono
-    fontSize: 0.75rem
-    fontWeight: 500
+    fontFamily: IBM Plex Mono
+    fontSize: 0.74rem
+    fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "0.04em"
+    letterSpacing: "0.12em"
 rounded:
-  xs: 6px
-  sm: 8px
-  md: 12px
+  xs: 10px
+  sm: 16px
+  md: 24px
+  lg: 34px
   pill: 9999px
 spacing:
-  xs: 4px
-  sm: 8px
-  md: 16px
-  lg: 32px
-  xl: 64px
+  xs: 6px
+  sm: 12px
+  md: 20px
+  lg: 40px
+  xl: 80px
 components:
   button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "#FFFFFF"
-    rounded: "{rounded.xs}"
-    padding: 12px
+    backgroundColor: "{colors.tertiary}"
+    textColor: "#03101A"
+    rounded: "{rounded.pill}"
+    padding: 14px
   button-primary-hover:
-    backgroundColor: "#B93816"
-    textColor: "#FFFFFF"
-    rounded: "{rounded.xs}"
-    padding: 12px
+    backgroundColor: "{colors.gold}"
+    textColor: "#050713"
+    rounded: "{rounded.pill}"
+    padding: 14px
   button-secondary:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.xs}"
-    padding: 12px
-  card:
-    backgroundColor: "{colors.neutral}"
-    textColor: "{colors.primary}"
-    rounded: "{rounded.sm}"
-    padding: 24px
-  surface-card:
     backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.pill}"
+    padding: 14px
+  card:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.md}"
+    padding: 28px
+  surface-card:
+    backgroundColor: "#11182C"
     textColor: "{colors.secondary}"
-    rounded: "{rounded.sm}"
-    padding: 24px
+    rounded: "{rounded.md}"
+    padding: 28px
   divider:
     backgroundColor: "{colors.line}"
     textColor: "{colors.primary}"
     rounded: "{rounded.xs}"
     padding: 4px
   badge:
-    backgroundColor: "#FDEDE8"
-    textColor: "#B93816"
-    rounded: "{rounded.pill}"
-    padding: 8px
-  accent-label:
-    backgroundColor: "{colors.tertiary}"
-    textColor: "{colors.primary}"
+    backgroundColor: "#102A3A"
+    textColor: "{colors.tertiary}"
     rounded: "{rounded.pill}"
     padding: 8px
   success-badge:
-    backgroundColor: "#EAF7EE"
+    backgroundColor: "#0A2A22"
     textColor: "{colors.success}"
     rounded: "{rounded.pill}"
     padding: 8px
   focus-ring:
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "{colors.neutral}"
     textColor: "{colors.focus}"
     rounded: "{rounded.xs}"
+    padding: 8px
+  aurora-chip:
+    backgroundColor: "{colors.violet}"
+    textColor: "{colors.neutral}"
+    rounded: "{rounded.pill}"
+    padding: 8px
+  rose-signal:
+    backgroundColor: "{colors.rose}"
+    textColor: "{colors.neutral}"
+    rounded: "{rounded.pill}"
     padding: 8px
 ---
 
 ## Overview
 
-Aetheris should now feel like a revenue-systems infrastructure company: calm, precise, technical, and trustworthy. The reference posture is Vercel — not copied visually, but translated through Aetheris. The site should be mostly white with restrained near-black text, exact spacing, small amounts of warm vermilion for conversion moments, and surfaces built with shadow-as-border rather than heavy outlines or decorative gradients.
+Aetheris is no longer a plain Vercel-style website and no longer an orange local-agency brand. The new posture is **premium AI command center**: cinematic, high-trust, intelligent, and memorable. Think Apple restraint, Stripe depth, Runway cinematic darkness, and BMW precision — translated into an original Aetheris identity.
 
-The goal is to remove the previous over-designed editorial treatment and replace it with product-grade clarity: every page should scan quickly on mobile, tablet, and desktop; every CTA should have a clear hit target; generated pages and blog posts should feel like the same system as the homepage.
+The page should feel expensive without feeling fake. It should look like a serious AI revenue-systems company that can build infrastructure, automation, and custom software for real businesses. Visual energy comes from layered depth, dimensional cards, aurora lighting, subtle 3D motion, and platinum/cyan/gold contrast — not from generic SaaS gradients or random icons.
 
 ## Colors
 
-- **Primary (#171717):** Vercel-style near-black for headings, navigation, dark CTAs, and high-emphasis text.
-- **Secondary (#4D4D4D):** body and explanatory copy. Avoid low-contrast beige text.
-- **Tertiary (#E8471C):** Aetheris vermilion. Use only for conversion accents, active states, badges, and key highlight words.
-- **Neutral (#FFFFFF):** the primary canvas. White space is the design.
-- **Surface (#FAFAFA):** subtle section backgrounds, inset panels, and code-like surfaces.
-- **Line (#EBEBEB):** Vercel-style ring borders and dividers.
-- **Focus (#0A72EF):** accessible keyboard focus ring.
-- **Success (#0B6E30):** validation, checks, and positive states.
+- **Neutral / Obsidian (#050713):** the main canvas. This gives the site cinematic depth and immediately separates it from template-looking service sites.
+- **Surface (#0B1020):** elevated command-room panels, cards, forms, and nav.
+- **Primary / Platinum (#F8F4EA):** hero text, high-emphasis copy, and premium contrast on dark surfaces.
+- **Secondary / Lunar Slate (#AAB6C8):** body text and secondary explanations.
+- **Tertiary / Aurora Cyan (#5DEBFF):** primary interaction color and AI glow. Use for CTAs, active states, lines, and key data highlights.
+- **Gold (#D7B56D):** trust, premium craft, founder/enterprise credibility. Use sparingly.
+- **Violet (#8A6CFF) and Rose (#FF5FA2):** dimensional light accents inside gradients, never large flat brand blocks.
 
 ## Typography
 
-Use Geist Sans everywhere except technical labels, small metadata, and code-like values, which use Geist Mono. Display text is compressed with negative letter-spacing. Body copy is not tiny: minimum readable body size is 16px, and navigation/labels should not fall below 12px. Avoid decorative serif headlines, script styling, excessive uppercase, and crowded mono text.
+Use Inter as the primary typeface for a premium modern product feel. Display typography is tight, large, and cinematic with negative letter spacing. Technical labels and data use IBM Plex Mono. Avoid decorative serif treatments. Avoid tiny nav text. The homepage hero should feel like a product launch, not a blog article.
 
 ## Layout
 
-Use Vercel-style restraint: centered containers, 8px grid, wide white space, and 2–3 column grids that collapse cleanly to one column on mobile. Every page must fit within the viewport with no horizontal scrolling at 390px, 768px, or desktop widths. Long blog/code content must wrap or scroll inside its own container, never push the whole page wider.
+Use full-bleed dark cinematic sections with centered containers. Cards live in a 3D depth system: dark glass panels, hairline cyan/gold borders, soft internal highlights, and hover perspective. Mobile collapses to single-column without losing drama. Every page must be readable at 390px and must not horizontally overflow.
 
 ## Elevation & Depth
 
-Use shadow-as-border: `0 0 0 1px rgba(0,0,0,.08)` for cards and panels. Add only whisper-level elevation for featured surfaces. Avoid heavy glassmorphism, big blur glows, large colored shadows, and decorative blobs.
+Depth is the signature. Use:
+
+- atmospheric radial lighting behind sections,
+- layered 3D orbital hero visuals,
+- `transform: perspective(...) rotateX(...) rotateY(...)` on cards,
+- cyan/gold rim-light borders,
+- soft multi-color glows with low opacity,
+- animated grids and scanlines at near-invisible opacity.
+
+Do not use cheap glassmorphism everywhere. Panels should feel like precision instruments, not frosted plastic.
 
 ## Shapes
 
-Buttons use a precise 6px radius like Vercel. Cards use 8–12px. Badges use full pills. Do not use oversized rounded rectangles everywhere. Touch targets must be at least 44px tall on mobile.
+Use premium rounded geometry: 10px controls, 16px compact cards, 24–34px feature panels, pill CTAs. Avoid sharp Vercel rectangles and avoid the previous orange pills.
 
 ## Components
 
-Primary buttons are near-black rectangles with 6px radius and 44px minimum height. Hover may switch to Aetheris vermilion. Secondary buttons are white with shadow-border rings. Cards are white, compact, and grid-aligned. Badges are small but readable, with vermilion-tinted or neutral backgrounds. Navigation is sticky, white, and responsive; mobile should not squeeze the entire desktop nav into one row.
+Primary buttons are cyan-on-obsidian or cyan-filled pills with luminous hover. Secondary buttons are dark translucent panels with platinum text and cyan border. Cards are dimensional command panels with subtle tilt and glow. Navigation is dark translucent glass with clear links and premium CTA. Forms are dark, legible, and high contrast.
 
 ## Do's and Don'ts
 
-Do use white space, Geist, exact alignment, shadow-border cards, and Aetheris vermilion sparingly. Do check mobile first. Do keep every public page tied to the same global system. Do test navigation, forms, tap targets, and console errors.
+Do surprise: cinematic dark mode, aurora light, premium 3D motion, strong contrast, highly polished cards, and memorable hero visuals. Do keep content readable and business-serious. Do verify build CSS order and production visuals.
 
-Don't use decorative serif/script typography, huge cream gradients, glass effects, giant pills for every button, tiny uppercase labels, or elements that cause horizontal overflow. Don't hide broken responsive behavior with `overflow-x: hidden` alone; fix max-width, wrapping, and tap targets.
+Don't use the rejected orange/white brand. Don't produce generic SaaS cards. Don't use fake metrics or random dashboards. Don't let animation block performance or readability. Don't miss static/blog/solution pages.

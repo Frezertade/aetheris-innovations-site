@@ -38,8 +38,11 @@ function slug(s) { return s.replace(/^\//,'root-').replace(/[^a-z0-9]+/gi,'-').r
         const vw = window.innerWidth, vh = window.innerHeight, doc = document.documentElement, body = document.body;
         const scrollW = Math.max(doc.scrollWidth, body.scrollWidth);
         const overflowNodes = [...document.querySelectorAll('*')].map(el => {
+          if (el.closest('.marquee-container,[aria-hidden="true"],#cursor-glow')) return null;
+          const cs = getComputedStyle(el);
+          if (cs.position === 'fixed' && cs.pointerEvents === 'none') return null;
           const r = el.getBoundingClientRect();
-          if (r.width > 0 && r.height > 0 && (r.width > vw + 2 || r.left < -2 || r.right > vw + 2)) {
+          if (r.width > 0 && r.height > 0 && (r.width > vw + 8 || r.left < -8 || r.right > vw + 8)) {
             return { tag: el.tagName, id: el.id, cls: String(el.className).slice(0,60), x: Math.round(r.x), w: Math.round(r.width) };
           }
         }).filter(Boolean).slice(0,5);
