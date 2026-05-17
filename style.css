@@ -3858,3 +3858,16 @@ label, form label, .form-group label {
     padding: 10px 12px !important;
   }
 }
+
+
+/* v6.8 final content polish: prevent hero/trust pill clipping. */
+.trust-list, .hero-pill-strip, .category-strip, .ticker-list, .marquee-track {
+  overflow: visible !important;
+  flex-wrap: wrap !important;
+  white-space: normal !important;
+}
+.trust-list li, .hero-pill-strip li, .category-strip li, .ticker-list li,
+.trust-item {
+  white-space: normal !important;
+  min-width: fit-content !important;
+}
