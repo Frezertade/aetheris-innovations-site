@@ -1,276 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Human Review — Aetheris Intake Audits</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Geist', sans-serif; background: #050713; color: #F8F4EA; line-height: 1.6; }
-    .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
-    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #222; }
-    h1 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; }
-    .stats { display: flex; gap: 2rem; }
-    .stat { text-align: center; }
-    .stat .num { font-family: 'Fraunces', serif; font-size: 2rem; color: #5DEBFF; }
-    .stat .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
-    .filters { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-    .filters button { padding: 0.5rem 1rem; background: transparent; border: 1px solid #333; color: #888; cursor: pointer; font-family: 'Geist', sans-serif; }
-    .filters button.active { border-color: #5DEBFF; color: #5DEBFF; }
-    .audit-grid { display: grid; gap: 1rem; }
-    .audit-card {
-      background: #111; border: 1px solid #222; padding: 1.5rem;
-      display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start;
-    }
-    .audit-card:hover { border-color: #333; }
-    .audit-main { min-width: 0; }
-    .audit-header { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
-    .audit-header h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; }
-    .badge {
-      padding: 0.2rem 0.6rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
-      border: 1px solid;
-    }
-    .badge-hot { color: #5DEBFF; border-color: #5DEBFF; }
-    .badge-warm { color: #5DEBFF; border-color: #5DEBFF; }
-    .badge-lukewarm { color: #5DEBFF; border-color: #5DEBFF; }
-    .badge-cold { color: #F8F4EA; border-color: #F8F4EA; }
-    .badge-approved { color: #5DEBFF; border-color: #5DEBFF; }
-    .badge-rejected { color: #5DEBFF; border-color: #5DEBFF; }
-    .meta { font-size: 0.85rem; color: #888; margin-bottom: 0.5rem; }
-    .meta span { margin-right: 1rem; }
-    .score-bar { height: 4px; background: #222; margin: 0.75rem 0; border-radius: 2px; overflow: hidden; }
-    .score-bar-fill { height: 100%; background: #5DEBFF; transition: width 0.3s; }
-    .details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
-    .detail-block h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666; margin-bottom: 0.3rem; }
-    .detail-block p, .detail-block ul { font-size: 0.85rem; color: #aaa; }
-    .detail-block ul { list-style: none; padding: 0; }
-    .detail-block ul li { padding: 0.15rem 0; }
-    .actions { display: flex; flex-direction: column; gap: 0.5rem; min-width: 140px; }
-    .actions button {
-      padding: 0.6rem 1rem; border: 1px solid; background: transparent; color: inherit;
-      font-family: 'Geist', sans-serif; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
-    }
-    .btn-approve { border-color: #5DEBFF; color: #5DEBFF; }
-    .btn-approve:hover { background: #5DEBFF; color: #050713; }
-    .btn-reject { border-color: #5DEBFF; color: #5DEBFF; }
-    .btn-reject:hover { background: #5DEBFF; color: #050713; }
-    .btn-comment { border-color: #888; color: #888; }
-    .btn-comment:hover { background: #888; color: #050713; }
-    .loading { text-align: center; padding: 4rem; color: #666; }
-    .empty { text-align: center; padding: 4rem; color: #555; }
-    .modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: none;
-      align-items: center; justify-content: center; z-index: 100;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal {
-      background: #111; border: 1px solid #333; padding: 2rem; max-width: 500px; width: 90%;
-    }
-    .modal h3 { font-family: 'Fraunces', serif; margin-bottom: 1rem; }
-    .modal textarea { width: 100%; min-height: 100px; background: #050713; border: 1px solid #333; color: #F8F4EA; padding: 0.75rem; font-family: 'Geist', sans-serif; margin-bottom: 1rem; }
-    .modal input { width: 100%; background: #050713; border: 1px solid #333; color: #F8F4EA; padding: 0.5rem; font-family: 'Geist', sans-serif; margin-bottom: 0.5rem; }
-    .modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
-    .modal-actions button { padding: 0.5rem 1rem; border: 1px solid #333; background: transparent; color: #F8F4EA; cursor: pointer; }
-    .modal-actions button.primary { border-color: #5DEBFF; color: #5DEBFF; }
-  </style>
-  <link rel="stylesheet" href="/aetheris-ui.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Human Review — Aetheris Intake Audits</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Geist', sans-serif; background: #050713; color: #F8F4EA; line-height: 1.6; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #222; }
+  h1 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; }
+  .stats { display: flex; gap: 2rem; }
+  .stat { text-align: center; }
+  .stat .num { font-family: 'Fraunces', serif; font-size: 2rem; color: #5DEBFF; }
+  .stat .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
+  .filters { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+  .filters button { padding: 0.5rem 1rem; background: transparent; border: 1px solid #333; color: #888; cursor: pointer; font-family: 'Geist', sans-serif; }
+  .filters button.active { border-color: #5DEBFF; color: #5DEBFF; }
+  .audit-grid { display: grid; gap: 1rem; }
+  .audit-card {
+   background: #111; border: 1px solid #222; padding: 1.5rem;
+   display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start;
+  }
+  .audit-card:hover { border-color: #333; }
+  .audit-main { min-width: 0; }
+  .audit-header { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .audit-header h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; }
+  .badge {
+   padding: 0.2rem 0.6rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+   border: 1px solid;
+  }
+  .badge-hot { color: #5DEBFF; border-color: #5DEBFF; }
+  .badge-warm { color: #5DEBFF; border-color: #5DEBFF; }
+  .badge-lukewarm { color: #5DEBFF; border-color: #5DEBFF; }
+  .badge-cold { color: #F8F4EA; border-color: #F8F4EA; }
+  .badge-approved { color: #5DEBFF; border-color: #5DEBFF; }
+  .badge-rejected { color: #5DEBFF; border-color: #5DEBFF; }
+  .meta { font-size: 0.85rem; color: #888; margin-bottom: 0.5rem; }
+  .meta span { margin-right: 1rem; }
+  .score-bar { height: 4px; background: #222; margin: 0.75rem 0; border-radius: 2px; overflow: hidden; }
+  .score-bar-fill { height: 100%; background: #5DEBFF; transition: width 0.3s; }
+  .details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .detail-block h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666; margin-bottom: 0.3rem; }
+  .detail-block p, .detail-block ul { font-size: 0.85rem; color: #aaa; }
+  .detail-block ul { list-style: none; padding: 0; }
+  .detail-block ul li { padding: 0.15rem 0; }
+  .actions { display: flex; flex-direction: column; gap: 0.5rem; min-width: 140px; }
+  .actions button {
+   padding: 0.6rem 1rem; border: 1px solid; background: transparent; color: inherit;
+   font-family: 'Geist', sans-serif; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-approve { border-color: #5DEBFF; color: #5DEBFF; }
+  .btn-approve:hover { background: #5DEBFF; color: #050713; }
+  .btn-reject { border-color: #5DEBFF; color: #5DEBFF; }
+  .btn-reject:hover { background: #5DEBFF; color: #050713; }
+  .btn-comment { border-color: #888; color: #888; }
+  .btn-comment:hover { background: #888; color: #050713; }
+  .loading { text-align: center; padding: 4rem; color: #666; }
+  .empty { text-align: center; padding: 4rem; color: #555; }
+  .modal-overlay {
+   position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: none;
+   align-items: center; justify-content: center; z-index: 100;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+   background: #111; border: 1px solid #333; padding: 2rem; max-width: 500px; width: 90%;
+  }
+  .modal h3 { font-family: 'Fraunces', serif; margin-bottom: 1rem; }
+  .modal textarea { width: 100%; min-height: 100px; background: #050713; border: 1px solid #333; color: #F8F4EA; padding: 0.75rem; font-family: 'Geist', sans-serif; margin-bottom: 1rem; }
+  .modal input { width: 100%; background: #050713; border: 1px solid #333; color: #F8F4EA; padding: 0.5rem; font-family: 'Geist', sans-serif; margin-bottom: 0.5rem; }
+  .modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
+  .modal-actions button { padding: 0.5rem 1rem; border: 1px solid #333; background: transparent; color: #F8F4EA; cursor: pointer; }
+  .modal-actions button.primary { border-color: #5DEBFF; color: #5DEBFF; }
+ </style>
+ <link rel="stylesheet" href="/aetheris-ui.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Intake Audit Review</h1>
-      <div class="stats">
-        <div class="stat"><div class="num" id="stat-pending">—</div><div class="lbl">Pending</div></div>
-        <div class="stat"><div class="num" id="stat-approved">—</div><div class="lbl">Approved</div></div>
-        <div class="stat"><div class="num" id="stat-rejected">—</div><div class="lbl">Rejected</div></div>
-        <div class="stat"><div class="num" id="stat-total">—</div><div class="lbl">Total</div></div>
-      </div>
-    </header>
+ <div class="container">
+  <header>
+   <h1>Intake Audit Review</h1>
+   <div class="stats">
+    <div class="stat"><div class="num" id="stat-pending">—</div><div class="lbl">Pending</div></div>
+    <div class="stat"><div class="num" id="stat-approved">—</div><div class="lbl">Approved</div></div>
+    <div class="stat"><div class="num" id="stat-rejected">—</div><div class="lbl">Rejected</div></div>
+    <div class="stat"><div class="num" id="stat-total">—</div><div class="lbl">Total</div></div>
+   </div>
+  </header>
 
-    <div class="filters">
-      <button class="active" onclick="filterAudits('pending_review')">Pending</button>
-      <button onclick="filterAudits('approved')">Approved</button>
-      <button onclick="filterAudits('rejected')">Rejected</button>
-      <button onclick="filterAudits('all')">All</button>
-    </div>
-
-    <div id="auditList" class="audit-grid">
-      <div class="loading">Loading audits...</div>
-    </div>
+  <div class="filters">
+   <button class="active" onclick="filterAudits('pending_review')">Pending</button>
+   <button onclick="filterAudits('approved')">Approved</button>
+   <button onclick="filterAudits('rejected')">Rejected</button>
+   <button onclick="filterAudits('all')">All</button>
   </div>
 
-  <div class="modal-overlay" id="reviewModal">
-    <div class="modal">
-      <h3 id="modalTitle">Review Audit</h3>
-      <input type="text" id="modalTier" placeholder="Adjusted tier (optional)">
-      <input type="text" id="modalPrice" placeholder="Adjusted price (optional)">
-      <textarea id="modalNotes" placeholder="Your notes / feedback..."></textarea>
-      <div class="modal-actions">
-        <button onclick="closeModal()">Cancel</button>
-        <button class="primary" id="modalSubmit" onclick="submitReview()">Submit</button>
-      </div>
-    </div>
+  <div id="auditList" class="audit-grid">
+   <div class="loading">Loading audits...</div>
   </div>
+ </div>
 
-  <script>
-    const API_BASE = '/api/human-review';
-    let currentAudits = [];
-    let currentFilter = 'pending_review';
-    let pendingAction = null;
-    let pendingAuditId = null;
+ <div class="modal-overlay" id="reviewModal">
+  <div class="modal">
+   <h3 id="modalTitle">Review Audit</h3>
+   <input type="text" id="modalTier" placeholder="Adjusted tier (optional)">
+   <input type="text" id="modalPrice" placeholder="Adjusted price (optional)">
+   <textarea id="modalNotes" placeholder="Your notes / feedback..."></textarea>
+   <div class="modal-actions">
+    <button onclick="closeModal()">Cancel</button>
+    <button class="primary" id="modalSubmit" onclick="submitReview()">Submit</button>
+   </div>
+  </div>
+ </div>
 
-    async function loadAudits() {
-      const list = document.getElementById('auditList');
-      list.innerHTML = '<div class="loading">Loading audits...</div>';
+ <script>
+  const API_BASE = '/api/human-review';
+  let currentAudits = [];
+  let currentFilter = 'pending_review';
+  let pendingAction = null;
+  let pendingAuditId = null;
 
-      try {
-        const res = await fetch(`${API_BASE}?status=${currentFilter}&limit=50`);
-        const data = await res.json();
+  async function loadAudits() {
+   const list = document.getElementById('auditList');
+   list.innerHTML = '<div class="loading">Loading audits...</div>';
 
-        if (!data.ok) throw new Error(data.error);
+   try {
+    const res = await fetch(`${API_BASE}?status=${currentFilter}&limit=50`);
+    const data = await res.json();
 
-        currentAudits = data.audits || [];
+    if (!data.ok) throw new Error(data.error);
 
-        document.getElementById('stat-pending').textContent = data.counts?.pending || 0;
-        document.getElementById('stat-approved').textContent = data.counts?.approved || 0;
-        document.getElementById('stat-rejected').textContent = data.counts?.rejected || 0;
-        document.getElementById('stat-total').textContent = data.counts?.total || 0;
+    currentAudits = data.audits || [];
 
-        if (!currentAudits.length) {
-          list.innerHTML = '<div class="empty">No audits found.</div>';
-          return;
-        }
+    document.getElementById('stat-pending').textContent = data.counts?.pending || 0;
+    document.getElementById('stat-approved').textContent = data.counts?.approved || 0;
+    document.getElementById('stat-rejected').textContent = data.counts?.rejected || 0;
+    document.getElementById('stat-total').textContent = data.counts?.total || 0;
 
-        list.innerHTML = currentAudits.map(audit => renderAuditCard(audit)).join('');
-      } catch (err) {
-        list.innerHTML = `<div class="empty">Error loading audits: ${err.message}</div>`;
-      }
+    if (!currentAudits.length) {
+     list.innerHTML = '<div class="empty">No audits found.</div>';
+     return;
     }
 
-    function renderAuditCard(a) {
-      const score = parseInt(a.score) || 0;
-      const badgeClass = a.review_status === 'approved' ? 'badge-approved' :
-                         a.review_status === 'rejected' ? 'badge-rejected' :
-                         `badge-${(a.quality_label || 'lukewarm').toLowerCase()}`;
-      const painPoints = a.pain_points ? a.pain_points.split(';').filter(x => x.trim()) : [];
-      const requirements = a.requirements ? a.requirements.split(';').filter(x => x.trim()) : [];
-      const products = a.recommended_products ? a.recommended_products.split(',').filter(x => x.trim()) : [];
+    list.innerHTML = currentAudits.map(audit => renderAuditCard(audit)).join('');
+   } catch (err) {
+    list.innerHTML = `<div class="empty">Error loading audits: ${err.message}</div>`;
+   }
+  }
 
-      return `
-        <div class="audit-card" data-id="${a.audit_id}">
-          <div class="audit-main">
-            <div class="audit-header">
-              <h3>${a.business}</h3>
-              <span class="badge ${badgeClass}">${a.review_status === 'pending_review' ? a.quality_label : a.review_status}</span>
-              <span class="badge" style="border-color:#666;color:#666">${a.urgency || 'Medium'} urgency</span>
-            </div>
-            <div class="meta">
-              <span>${a.name}</span>
-              <span>${a.email}</span>
-              <span>${a.industry}</span>
-              <span>${a.location}</span>
-            </div>
-            <div class="score-bar"><div class="score-bar-fill" style="width:${score}%"></div></div>
-            <div class="details">
-              <div class="detail-block">
-                <h4>Score</h4>
-                <p>${score}/100 · ${Math.round((a.confidence || 0.7) * 100)}% confidence</p>
-              </div>
-              <div class="detail-block">
-                <h4>Products</h4>
-                <ul>${products.map(p => `<li>• ${p}</li>`).join('')}</ul>
-              </div>
-              <div class="detail-block">
-                <h4>Tier</h4>
-                <p>${a.recommended_tier || 'TBD'} · ${a.estimated_monthly || 'TBD'}</p>
-              </div>
-              <div class="detail-block">
-                <h4>Pain Points</h4>
-                <ul>${painPoints.slice(0, 4).map(p => `<li>• ${p.trim()}</li>`).join('')}</ul>
-              </div>
-              <div class="detail-block">
-                <h4>Requirements</h4>
-                <ul>${requirements.slice(0, 4).map(r => `<li>• ${r.trim()}</li>`).join('')}</ul>
-              </div>
-              <div class="detail-block">
-                <h4>Timeline</h4>
-                <p>${a.estimated_setup_days || '?'} days setup</p>
-              </div>
-            </div>
-          </div>
-          <div class="actions">
-            <button class="btn-approve" onclick="openReview('${a.audit_id}', 'approve')">Approve</button>
-            <button class="btn-reject" onclick="openReview('${a.audit_id}', 'reject')">Reject</button>
-            <button class="btn-comment" onclick="openReview('${a.audit_id}', 'comment')">Comment</button>
-          </div>
-        </div>
-      `;
-    }
+  function renderAuditCard(a) {
+   const score = parseInt(a.score) || 0;
+   const badgeClass = a.review_status === 'approved' ? 'badge-approved' :
+             a.review_status === 'rejected' ? 'badge-rejected' :
+             `badge-${(a.quality_label || 'lukewarm').toLowerCase()}`;
+   const painPoints = a.pain_points ? a.pain_points.split(';').filter(x => x.trim()) : [];
+   const requirements = a.requirements ? a.requirements.split(';').filter(x => x.trim()) : [];
+   const products = a.recommended_products ? a.recommended_products.split(',').filter(x => x.trim()) : [];
 
-    function filterAudits(status) {
-      currentFilter = status;
-      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-      loadAudits();
-    }
+   return `
+    <div class="audit-card" data-id="${a.audit_id}">
+     <div class="audit-main">
+      <div class="audit-header">
+       <h3>${a.business}</h3>
+       <span class="badge ${badgeClass}">${a.review_status === 'pending_review' ? a.quality_label : a.review_status}</span>
+       <span class="badge" style="border-color:#666;color:#666">${a.urgency || 'Medium'} urgency</span>
+      </div>
+      <div class="meta">
+       <span>${a.name}</span>
+       <span>${a.email}</span>
+       <span>${a.industry}</span>
+       <span>${a.location}</span>
+      </div>
+      <div class="score-bar"><div class="score-bar-fill" style="width:${score}%"></div></div>
+      <div class="details">
+       <div class="detail-block">
+        <h4>Score</h4>
+        <p>${score}/100 · ${Math.round((a.confidence || 0.7) * 100)}% confidence</p>
+       </div>
+       <div class="detail-block">
+        <h4>Products</h4>
+        <ul>${products.map(p => `<li>• ${p}</li>`).join('')}</ul>
+       </div>
+       <div class="detail-block">
+        <h4>Tier</h4>
+        <p>${a.recommended_tier || 'TBD'} · ${a.estimated_monthly || 'TBD'}</p>
+       </div>
+       <div class="detail-block">
+        <h4>Pain Points</h4>
+        <ul>${painPoints.slice(0, 4).map(p => `<li>• ${p.trim()}</li>`).join('')}</ul>
+       </div>
+       <div class="detail-block">
+        <h4>Requirements</h4>
+        <ul>${requirements.slice(0, 4).map(r => `<li>• ${r.trim()}</li>`).join('')}</ul>
+       </div>
+       <div class="detail-block">
+        <h4>Timeline</h4>
+        <p>${a.estimated_setup_days || '?'} days setup</p>
+       </div>
+      </div>
+     </div>
+     <div class="actions">
+      <button class="btn-approve" onclick="openReview('${a.audit_id}', 'approve')">Approve</button>
+      <button class="btn-reject" onclick="openReview('${a.audit_id}', 'reject')">Reject</button>
+      <button class="btn-comment" onclick="openReview('${a.audit_id}', 'comment')">Comment</button>
+     </div>
+    </div>
+   `;
+  }
 
-    function openReview(auditId, action) {
-      pendingAuditId = auditId;
-      pendingAction = action;
-      document.getElementById('modalTitle').textContent = action === 'approve' ? 'Approve Audit' : action === 'reject' ? 'Reject Audit' : 'Add Comment';
-      document.getElementById('modalNotes').value = '';
-      document.getElementById('modalTier').value = '';
-      document.getElementById('modalPrice').value = '';
-      document.getElementById('reviewModal').classList.add('open');
-    }
+  function filterAudits(status) {
+   currentFilter = status;
+   document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+   event.target.classList.add('active');
+   loadAudits();
+  }
 
-    function closeModal() {
-      document.getElementById('reviewModal').classList.remove('open');
-      pendingAction = null;
-      pendingAuditId = null;
-    }
+  function openReview(auditId, action) {
+   pendingAuditId = auditId;
+   pendingAction = action;
+   document.getElementById('modalTitle').textContent = action === 'approve' ? 'Approve Audit' : action === 'reject' ? 'Reject Audit' : 'Add Comment';
+   document.getElementById('modalNotes').value = '';
+   document.getElementById('modalTier').value = '';
+   document.getElementById('modalPrice').value = '';
+   document.getElementById('reviewModal').classList.add('open');
+  }
 
-    async function submitReview() {
-      if (!pendingAuditId || !pendingAction) return;
+  function closeModal() {
+   document.getElementById('reviewModal').classList.remove('open');
+   pendingAction = null;
+   pendingAuditId = null;
+  }
 
-      const notes = document.getElementById('modalNotes').value;
-      const tier = document.getElementById('modalTier').value;
-      const price = document.getElementById('modalPrice').value;
+  async function submitReview() {
+   if (!pendingAuditId || !pendingAction) return;
 
-      const audit = currentAudits.find(a => a.audit_id === pendingAuditId);
-      const adjustedProducts = audit ? audit.recommended_products.split(',').map(x => x.trim()).filter(Boolean) : [];
+   const notes = document.getElementById('modalNotes').value;
+   const tier = document.getElementById('modalTier').value;
+   const price = document.getElementById('modalPrice').value;
 
-      try {
-        const res = await fetch(API_BASE, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            audit_id: pendingAuditId,
-            decision: pendingAction,
-            notes,
-            adjusted_tier: tier || undefined,
-            adjusted_price: price || undefined,
-            adjusted_products: adjustedProducts
-          })
-        });
+   const audit = currentAudits.find(a => a.audit_id === pendingAuditId);
+   const adjustedProducts = audit ? audit.recommended_products.split(',').map(x => x.trim()).filter(Boolean) : [];
 
-        const data = await res.json();
-        if (!data.ok) throw new Error(data.error);
-
-        closeModal();
-        loadAudits();
-      } catch (err) {
-        alert('Failed: ' + err.message);
-      }
-    }
-
-    document.getElementById('reviewModal').addEventListener('click', e => {
-      if (e.target === document.getElementById('reviewModal')) closeModal();
+   try {
+    const res = await fetch(API_BASE, {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({
+      audit_id: pendingAuditId,
+      decision: pendingAction,
+      notes,
+      adjusted_tier: tier || undefined,
+      adjusted_price: price || undefined,
+      adjusted_products: adjustedProducts
+     })
     });
 
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error);
+
+    closeModal();
     loadAudits();
-  </script>
+   } catch (err) {
+    alert('Failed: ' + err.message);
+   }
+  }
+
+  document.getElementById('reviewModal').addEventListener('click', e => {
+   if (e.target === document.getElementById('reviewModal')) closeModal();
+  });
+
+  loadAudits();
+ </script>
 </body>
 </html>

@@ -1,324 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medspa Money Magnet AI Demo | Aetheris Innovations</title>
-  <meta name="description" content="Live Money Magnet AI demo for medspas: AI answers visitor questions, qualifies interest, captures leads, logs them to Google Sheets, and notifies the owner." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #5DEBFF;
-      --panel: rgba(255,255,255,.08);
-      --panel-2: rgba(255,255,255,.12);
-      --text: #F8F4EA;
-      --muted: #F8F4EA;
-      --line: rgba(255,255,255,.16);
-      --pink: #5DEBFF;
-      --cyan: #5DEBFF;
-      --cyan: #5DEBFF;
-      --green: #5DEBFF;
-      --warning: #5DEBFF;
-      --shadow: 0 24px 80px rgba(0,0,0,.45);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Medspa Money Magnet AI Demo | Aetheris Innovations</title>
+ <meta name="description" content="Live Money Magnet AI demo for medspas: AI answers visitor questions, qualifies interest, captures leads, logs them to Google Sheets, and notifies the owner." />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+ <style>
+  :root {
+   --bg: #5DEBFF;
+   --panel: rgba(255,255,255,.08);
+   --panel-2: rgba(255,255,255,.12);
+   --text: #F8F4EA;
+   --muted: #F8F4EA;
+   --line: rgba(255,255,255,.16);
+   --pink: #5DEBFF;
+   --cyan: #5DEBFF;
+   --cyan: #5DEBFF;
+   --green: #5DEBFF;
+   --warning: #5DEBFF;
+   --shadow: 0 24px 80px rgba(0,0,0,.45);
+   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(255,107,181,.28), transparent 28rem),
-        radial-gradient(circle at 85% 0%, rgba(75,228,255,.18), transparent 24rem),
-        radial-gradient(circle at 50% 90%, rgba(141,124,255,.20), transparent 34rem),
-        var(--bg);
-      min-height: 100vh;
-    }
+  * { box-sizing: border-box; }
+  body {
+   margin: 0;
+   color: var(--text);
+   background:
+    radial-gradient(circle at 15% 10%, rgba(255,107,181,.28), transparent 28rem),
+    radial-gradient(circle at 85% 0%, rgba(75,228,255,.18), transparent 24rem),
+    radial-gradient(circle at 50% 90%, rgba(141,124,255,.20), transparent 34rem),
+    var(--bg);
+   min-height: 100vh;
+  }
 
-    a { color: inherit; }
-    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+  a { color: inherit; }
+  .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(8, 10, 19, .76);
-      border-bottom: 1px solid var(--line);
-    }
+  header {
+   position: sticky;
+   top: 0;
+   z-index: 10;
+   backdrop-filter: blur(18px);
+   background: rgba(8, 10, 19, .76);
+   border-bottom: 1px solid var(--line);
+  }
 
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -.04em; }
-    .logo { width: 34px; height: 34px; border-radius: 12px; background: linear-gradient(135deg, var(--pink), var(--cyan), var(--cyan)); box-shadow: 0 0 24px rgba(255,107,181,.35); }
-    .nav-links { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
-    .nav-links a { text-decoration: none; padding: 9px 12px; border: 1px solid transparent; border-radius: 999px; }
-    .nav-links a:hover { border-color: var(--line); color: var(--text); background: rgba(255,255,255,.06); }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -.04em; }
+  .logo { width: 34px; height: 34px; border-radius: 12px; background: linear-gradient(135deg, var(--pink), var(--cyan), var(--cyan)); box-shadow: 0 0 24px rgba(255,107,181,.35); }
+  .nav-links { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+  .nav-links a { text-decoration: none; padding: 9px 12px; border: 1px solid transparent; border-radius: 999px; }
+  .nav-links a:hover { border-color: var(--line); color: var(--text); background: rgba(255,255,255,.06); }
 
-    .hero { padding: 64px 0 34px; }
-    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 28px; align-items: center; }
-    .eyebrow { display: inline-flex; gap: 8px; align-items: center; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,107,181,.35); background: rgba(255,107,181,.09); color: #F8F4EA; font-weight: 800; font-size: 13px; }
-    h1 { margin: 20px 0 18px; font-size: clamp(42px, 7vw, 78px); line-height: .92; letter-spacing: -.07em; }
-    .gradient { background: linear-gradient(90deg, #fff, #F8F4EA, #F8F4EA); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .lead { color: var(--muted); font-size: clamp(18px, 2vw, 22px); line-height: 1.6; max-width: 680px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .btn { border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 14px 18px; font-weight: 900; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { color: #5DEBFF; background: linear-gradient(135deg, #fff, #5DEBFF 42%, #5DEBFF); box-shadow: 0 14px 44px rgba(255,107,181,.25); }
-    .btn-secondary { color: var(--text); background: rgba(255,255,255,.08); border: 1px solid var(--line); }
+  .hero { padding: 64px 0 34px; }
+  .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 28px; align-items: center; }
+  .eyebrow { display: inline-flex; gap: 8px; align-items: center; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,107,181,.35); background: rgba(255,107,181,.09); color: #F8F4EA; font-weight: 800; font-size: 13px; }
+  h1 { margin: 20px 0 18px; font-size: clamp(42px, 7vw, 78px); line-height: .92; letter-spacing: -.07em; }
+  .gradient { background: linear-gradient(90deg, #fff, #F8F4EA, #F8F4EA); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--muted); font-size: clamp(18px, 2vw, 22px); line-height: 1.6; max-width: 680px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn { border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 14px 18px; font-weight: 900; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { color: #5DEBFF; background: linear-gradient(135deg, #fff, #5DEBFF 42%, #5DEBFF); box-shadow: 0 14px 44px rgba(255,107,181,.25); }
+  .btn-secondary { color: var(--text); background: rgba(255,255,255,.08); border: 1px solid var(--line); }
 
-    .proof-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-    .proof { padding: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.06); border-radius: 20px; }
-    .proof strong { display: block; font-size: 22px; }
-    .proof span { display: block; color: var(--muted); font-size: 13px; margin-top: 5px; }
+  .proof-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+  .proof { padding: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.06); border-radius: 20px; }
+  .proof strong { display: block; font-size: 22px; }
+  .proof span { display: block; color: var(--muted); font-size: 13px; margin-top: 5px; }
 
-    .demo-card { border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.06)); border-radius: 32px; box-shadow: var(--shadow); overflow: hidden; }
-    .phone-top { padding: 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
-    .status { display: inline-flex; align-items: center; gap: 8px; color: #F8F4EA; font-size: 13px; font-weight: 800; }
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 16px var(--green); }
-    .chat { padding: 18px; height: 440px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
-    .msg { max-width: 86%; padding: 12px 14px; border-radius: 18px; line-height: 1.48; font-size: 14px; white-space: pre-wrap; }
-    .bot { background: rgba(255,255,255,.10); border: 1px solid var(--line); align-self: flex-start; }
-    .user { background: linear-gradient(135deg, rgba(255,107,181,.95), rgba(141,124,255,.95)); align-self: flex-end; color: white; }
-    .typing { opacity: .72; font-style: italic; }
-    .quick { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 18px 14px; }
-    .chip { color: var(--text); background: rgba(255,255,255,.08); border: 1px solid var(--line); border-radius: 999px; padding: 8px 10px; font-size: 12px; cursor: pointer; }
-    .chat-input { display: flex; gap: 8px; padding: 14px 18px 18px; border-top: 1px solid var(--line); }
-    .chat-input input { flex: 1; border: 1px solid var(--line); border-radius: 999px; padding: 13px 14px; background: rgba(0,0,0,.22); color: var(--text); outline: none; }
-    .chat-input button { border-radius: 999px; border: 0; padding: 0 16px; font-weight: 900; color: #111; background: var(--cyan); cursor: pointer; }
+  .demo-card { border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.06)); border-radius: 32px; box-shadow: var(--shadow); overflow: hidden; }
+  .phone-top { padding: 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  .status { display: inline-flex; align-items: center; gap: 8px; color: #F8F4EA; font-size: 13px; font-weight: 800; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 16px var(--green); }
+  .chat { padding: 18px; height: 440px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
+  .msg { max-width: 86%; padding: 12px 14px; border-radius: 18px; line-height: 1.48; font-size: 14px; white-space: pre-wrap; }
+  .bot { background: rgba(255,255,255,.10); border: 1px solid var(--line); align-self: flex-start; }
+  .user { background: linear-gradient(135deg, rgba(255,107,181,.95), rgba(141,124,255,.95)); align-self: flex-end; color: white; }
+  .typing { opacity: .72; font-style: italic; }
+  .quick { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 18px 14px; }
+  .chip { color: var(--text); background: rgba(255,255,255,.08); border: 1px solid var(--line); border-radius: 999px; padding: 8px 10px; font-size: 12px; cursor: pointer; }
+  .chat-input { display: flex; gap: 8px; padding: 14px 18px 18px; border-top: 1px solid var(--line); }
+  .chat-input input { flex: 1; border: 1px solid var(--line); border-radius: 999px; padding: 13px 14px; background: rgba(0,0,0,.22); color: var(--text); outline: none; }
+  .chat-input button { border-radius: 999px; border: 0; padding: 0 16px; font-weight: 900; color: #111; background: var(--cyan); cursor: pointer; }
 
-    section { padding: 56px 0; }
-    .section-title { font-size: clamp(32px, 5vw, 54px); line-height: 1; letter-spacing: -.055em; margin: 0 0 14px; }
-    .section-copy { color: var(--muted); font-size: 18px; line-height: 1.65; max-width: 780px; }
-    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
-    .step { border: 1px solid var(--line); background: rgba(255,255,255,.06); border-radius: 24px; padding: 18px; }
-    .num { width: 34px; height: 34px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,107,181,.18); color: #F8F4EA; font-weight: 900; margin-bottom: 12px; }
-    .step h3 { margin: 0 0 8px; }
-    .step p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
+  section { padding: 56px 0; }
+  .section-title { font-size: clamp(32px, 5vw, 54px); line-height: 1; letter-spacing: -.055em; margin: 0 0 14px; }
+  .section-copy { color: var(--muted); font-size: 18px; line-height: 1.65; max-width: 780px; }
+  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
+  .step { border: 1px solid var(--line); background: rgba(255,255,255,.06); border-radius: 24px; padding: 18px; }
+  .num { width: 34px; height: 34px; border-radius: 12px; display: grid; place-items: center; background: rgba(255,107,181,.18); color: #F8F4EA; font-weight: 900; margin-bottom: 12px; }
+  .step h3 { margin: 0 0 8px; }
+  .step p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
 
-    .capture { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items: start; }
-    .panel { border: 1px solid var(--line); background: rgba(255,255,255,.07); border-radius: 28px; padding: 22px; box-shadow: var(--shadow); }
-    form { display: grid; gap: 12px; }
-    label { display: grid; gap: 7px; color: var(--muted); font-weight: 700; font-size: 13px; }
-    input, select, textarea { width: 100%; border: 1px solid var(--line); background: rgba(0,0,0,.24); color: var(--text); border-radius: 14px; padding: 13px; font: inherit; outline: none; }
-    textarea { min-height: 96px; resize: vertical; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .success, .error { display: none; border-radius: 18px; padding: 14px; margin-top: 12px; line-height: 1.5; }
-    .success { background: rgba(71,230,162,.13); border: 1px solid rgba(71,230,162,.35); }
-    .error { background: rgba(255,107,107,.13); border: 1px solid rgba(255,107,107,.35); }
-    .mini { color: var(--muted); font-size: 13px; line-height: 1.55; }
-    .sheet-preview { display: grid; gap: 10px; margin-top: 16px; }
-    .row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; border-bottom: 1px solid var(--line); padding: 10px 0; font-size: 14px; }
-    .row span:first-child { color: var(--muted); }
+  .capture { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; align-items: start; }
+  .panel { border: 1px solid var(--line); background: rgba(255,255,255,.07); border-radius: 28px; padding: 22px; box-shadow: var(--shadow); }
+  form { display: grid; gap: 12px; }
+  label { display: grid; gap: 7px; color: var(--muted); font-weight: 700; font-size: 13px; }
+  input, select, textarea { width: 100%; border: 1px solid var(--line); background: rgba(0,0,0,.24); color: var(--text); border-radius: 14px; padding: 13px; font: inherit; outline: none; }
+  textarea { min-height: 96px; resize: vertical; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .success, .error { display: none; border-radius: 18px; padding: 14px; margin-top: 12px; line-height: 1.5; }
+  .success { background: rgba(71,230,162,.13); border: 1px solid rgba(71,230,162,.35); }
+  .error { background: rgba(255,107,107,.13); border: 1px solid rgba(255,107,107,.35); }
+  .mini { color: var(--muted); font-size: 13px; line-height: 1.55; }
+  .sheet-preview { display: grid; gap: 10px; margin-top: 16px; }
+  .row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; border-bottom: 1px solid var(--line); padding: 10px 0; font-size: 14px; }
+  .row span:first-child { color: var(--muted); }
 
-    footer { padding: 34px 0 46px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer { padding: 34px 0 46px; border-top: 1px solid var(--line); color: var(--muted); }
 
-    @media (max-width: 920px) {
-      .hero-grid, .capture { grid-template-columns: 1fr; }
-      .flow { grid-template-columns: 1fr 1fr; }
-      .proof-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-    @media (max-width: 560px) {
-      .flow, .form-grid { grid-template-columns: 1fr; }
-      .chat { height: 390px; }
-    }
-  </style>
-  <link rel="stylesheet" href="/aetheris-ui.css">
+  @media (max-width: 920px) {
+   .hero-grid, .capture { grid-template-columns: 1fr; }
+   .flow { grid-template-columns: 1fr 1fr; }
+   .proof-row { grid-template-columns: 1fr; }
+   .nav-links { display: none; }
+  }
+  @media (max-width: 560px) {
+   .flow, .form-grid { grid-template-columns: 1fr; }
+   .chat { height: 390px; }
+  }
+ </style>
+ <link rel="stylesheet" href="/aetheris-ui.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav>
-        <a class="brand" href="/" aria-label="Aetheris home"><span class="logo"></span><span>Aetheris Innovations</span></a>
-        <div class="nav-links">
-          <a href="#demo">Live AI Demo</a>
-          <a href="#flow">Flow</a>
-          <a href="#capture">Test Lead Capture</a>
-          <a href="https://calendar.app.google/JajCvPZdws3fpAL18">Book Audit</a>
-        </div>
-      </nav>
+ <header>
+  <div class="wrap">
+   <nav>
+    <a class="brand" href="/" aria-label="Aetheris home"><span class="logo"></span><span>Aetheris Innovations</span></a>
+    <div class="nav-links">
+     <a href="#demo">Live AI Demo</a>
+     <a href="#flow">Flow</a>
+     <a href="#capture">Test Lead Capture</a>
+     <a href="https://calendar.app.google/JajCvPZdws3fpAL18">Book Audit</a>
     </div>
-  </header>
+   </nav>
+  </div>
+ </header>
 
-  <main>
-    <section class="hero" id="demo">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Live Money Magnet AI Demo · Medspa</span>
-          <h1>Turn after-hours medspa visitors into <span class="gradient">booked consultation leads.</span></h1>
-          <p class="lead">This is a working Aetheris demo: the AI answers questions, qualifies interest, captures contact details, logs the lead to Google Sheets, and sends the owner a notification.</p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" onclick="document.querySelector('#capture').scrollIntoView({behavior:'smooth'})">Test the lead flow</button>
-            <a class="btn btn-secondary" href="https://calendar.app.google/JajCvPZdws3fpAL18">Book a Money Magnet Audit</a>
-          </div>
-          <div class="proof-row">
-            <div class="proof"><strong>Instant</strong><span>Answers repetitive treatment questions</span></div>
-            <div class="proof"><strong>Qualified</strong><span>Captures service, timeline, and contact info</span></div>
-            <div class="proof"><strong>Routed</strong><span>Logs lead + notifies owner automatically</span></div>
-          </div>
-        </div>
+ <main>
+  <section class="hero" id="demo">
+   <div class="wrap hero-grid">
+    <div>
+     <span class="eyebrow">Live Money Magnet AI Demo · Medspa</span>
+     <h1>Turn after-hours medspa visitors into <span class="gradient">booked consultation leads.</span></h1>
+     <p class="lead">This is a working Aetheris demo: the AI answers questions, qualifies interest, captures contact details, logs the lead to Google Sheets, and sends the owner a notification.</p>
+     <div class="hero-actions">
+      <button class="btn btn-primary" onclick="document.querySelector('#capture').scrollIntoView({behavior:'smooth'})">Test the lead flow</button>
+      <a class="btn btn-secondary" href="https://calendar.app.google/JajCvPZdws3fpAL18">Book a Money Magnet Audit</a>
+     </div>
+     <div class="proof-row">
+      <div class="proof"><strong>Instant</strong><span>Answers repetitive treatment questions</span></div>
+      <div class="proof"><strong>Qualified</strong><span>Captures service, timeline, and contact info</span></div>
+      <div class="proof"><strong>Routed</strong><span>Logs lead + notifies owner automatically</span></div>
+     </div>
+    </div>
 
-        <div class="demo-card" aria-label="Money Magnet AI chat demo">
-          <div class="phone-top">
-            <strong>Aurora Skin Studio AI</strong>
-            <span class="status"><span class="dot"></span>Live demo</span>
-          </div>
-          <div class="chat" id="chatLog"></div>
-          <div class="quick">
-            <button class="chip" data-prompt="Do you offer Botox consultations?">Botox question</button>
-            <button class="chip" data-prompt="How much does laser hair removal cost?">Pricing question</button>
-            <button class="chip" data-prompt="Can I book a consultation this week?">Booking intent</button>
-          </div>
-          <form class="chat-input" id="chatForm">
-            <input id="chatMessage" placeholder="Ask the medspa AI a question..." autocomplete="off" />
-            <button type="submit">Send</button>
-          </form>
-        </div>
+    <div class="demo-card" aria-label="Money Magnet AI chat demo">
+     <div class="phone-top">
+      <strong>Aurora Skin Studio AI</strong>
+      <span class="status"><span class="dot"></span>Live demo</span>
+     </div>
+     <div class="chat" id="chatLog"></div>
+     <div class="quick">
+      <button class="chip" data-prompt="Do you offer Botox consultations?">Botox question</button>
+      <button class="chip" data-prompt="How much does laser hair removal cost?">Pricing question</button>
+      <button class="chip" data-prompt="Can I book a consultation this week?">Booking intent</button>
+     </div>
+     <form class="chat-input" id="chatForm">
+      <input id="chatMessage" placeholder="Ask the medspa AI a question..." autocomplete="off" />
+      <button type="submit">Send</button>
+     </form>
+    </div>
+   </div>
+  </section>
+
+  <section id="flow">
+   <div class="wrap">
+    <h2 class="section-title">The full revenue flow.</h2>
+    <p class="section-copy">This demo is not a static mockup. It is the first repeatable version of what Aetheris can sell, clone, and customize for local businesses.</p>
+    <div class="flow">
+     <div class="step"><div class="num">1</div><h3>Visitor asks</h3><p>The AI answers approved general questions and guides the visitor to the next step.</p></div>
+     <div class="step"><div class="num">2</div><h3>AI qualifies</h3><p>It identifies service interest, timeline, and whether the visitor needs a consultation.</p></div>
+     <div class="step"><div class="num">3</div><h3>Lead captured</h3><p>Name, email/phone, service interest, and summary are submitted through the API.</p></div>
+     <div class="step"><div class="num">4</div><h3>Owner notified</h3><p>The lead is logged to Google Sheets and a notification email is sent to the owner.</p></div>
+    </div>
+   </div>
+  </section>
+
+  <section id="capture">
+   <div class="wrap capture">
+    <div>
+     <h2 class="section-title">Test the lead capture endpoint.</h2>
+     <p class="section-copy">Submit a demo lead. Production will score it, append it to the Google Sheet, return the sheet update range, and send the owner notification.</p>
+     <p class="mini">Use demo/fake contact details if you do not want to create a real inquiry. The flow proves the delivery architecture without exposing private customer data.</p>
+    </div>
+    <div class="panel">
+     <form id="leadForm">
+      <div class="form-grid">
+       <label>Name<input name="name" value="Jane Demo" required /></label>
+       <label>Email<input name="email" type="email" value="jane.demo@example.com" /></label>
       </div>
-    </section>
-
-    <section id="flow">
-      <div class="wrap">
-        <h2 class="section-title">The full revenue flow.</h2>
-        <p class="section-copy">This demo is not a static mockup. It is the first repeatable version of what Aetheris can sell, clone, and customize for local businesses.</p>
-        <div class="flow">
-          <div class="step"><div class="num">1</div><h3>Visitor asks</h3><p>The AI answers approved general questions and guides the visitor to the next step.</p></div>
-          <div class="step"><div class="num">2</div><h3>AI qualifies</h3><p>It identifies service interest, timeline, and whether the visitor needs a consultation.</p></div>
-          <div class="step"><div class="num">3</div><h3>Lead captured</h3><p>Name, email/phone, service interest, and summary are submitted through the API.</p></div>
-          <div class="step"><div class="num">4</div><h3>Owner notified</h3><p>The lead is logged to Google Sheets and a notification email is sent to the owner.</p></div>
-        </div>
+      <div class="form-grid">
+       <label>Phone<input name="phone" value="+1 717 555 0199" /></label>
+       <label>Timeline<select name="timeline"><option>This week</option><option>This month</option><option>Just researching</option></select></label>
       </div>
-    </section>
+      <label>Service interest<input name="service_interest" value="Botox consultation" required /></label>
+      <label>Conversation summary<textarea name="conversation_summary" required>Visitor asked about Botox, pricing, and availability. They want a consultation this week and provided contact details.</textarea></label>
+      <label><span><input type="checkbox" name="booking_requested" checked style="width:auto;margin-right:8px" /> Visitor requested booking link</span></label>
+      <button class="btn btn-primary" type="submit" id="submitLead">Submit demo lead</button>
+     </form>
+     <div class="success" id="successBox"></div>
+     <div class="error" id="errorBox"></div>
+     <div class="sheet-preview" id="resultPreview" aria-live="polite"></div>
+    </div>
+   </div>
+  </section>
+ </main>
 
-    <section id="capture">
-      <div class="wrap capture">
-        <div>
-          <h2 class="section-title">Test the lead capture endpoint.</h2>
-          <p class="section-copy">Submit a demo lead. Production will score it, append it to the Google Sheet, return the sheet update range, and send the owner notification.</p>
-          <p class="mini">Use demo/fake contact details if you do not want to create a real inquiry. The flow proves the delivery architecture without exposing private customer data.</p>
-        </div>
-        <div class="panel">
-          <form id="leadForm">
-            <div class="form-grid">
-              <label>Name<input name="name" value="Jane Demo" required /></label>
-              <label>Email<input name="email" type="email" value="jane.demo@example.com" /></label>
-            </div>
-            <div class="form-grid">
-              <label>Phone<input name="phone" value="+1 717 555 0199" /></label>
-              <label>Timeline<select name="timeline"><option>This week</option><option>This month</option><option>Just researching</option></select></label>
-            </div>
-            <label>Service interest<input name="service_interest" value="Botox consultation" required /></label>
-            <label>Conversation summary<textarea name="conversation_summary" required>Visitor asked about Botox, pricing, and availability. They want a consultation this week and provided contact details.</textarea></label>
-            <label><span><input type="checkbox" name="booking_requested" checked style="width:auto;margin-right:8px" /> Visitor requested booking link</span></label>
-            <button class="btn btn-primary" type="submit" id="submitLead">Submit demo lead</button>
-          </form>
-          <div class="success" id="successBox"></div>
-          <div class="error" id="errorBox"></div>
-          <div class="sheet-preview" id="resultPreview" aria-live="polite"></div>
-        </div>
-      </div>
-    </section>
-  </main>
+ <footer>
+  <div class="wrap">Aetheris Innovations · Money Magnet AI demo · <a href="/delivery-kits/money-magnet-ai/">Delivery kit files live in the repo</a></div>
+ </footer>
 
-  <footer>
-    <div class="wrap">Aetheris Innovations · Money Magnet AI demo · <a href="/delivery-kits/money-magnet-ai/">Delivery kit files live in the repo</a></div>
-  </footer>
+ <script>
+  const chatLog = document.getElementById('chatLog');
+  const chatForm = document.getElementById('chatForm');
+  const chatMessage = document.getElementById('chatMessage');
+  const history = [];
 
-  <script>
-    const chatLog = document.getElementById('chatLog');
-    const chatForm = document.getElementById('chatForm');
-    const chatMessage = document.getElementById('chatMessage');
-    const history = [];
+  function addMessage(role, text, typing = false) {
+   const div = document.createElement('div');
+   div.className = `msg ${role === 'user' ? 'user' : 'bot'}${typing ? ' typing' : ''}`;
+   div.textContent = text;
+   chatLog.appendChild(div);
+   chatLog.scrollTop = chatLog.scrollHeight;
+   return div;
+  }
 
-    function addMessage(role, text, typing = false) {
-      const div = document.createElement('div');
-      div.className = `msg ${role === 'user' ? 'user' : 'bot'}${typing ? ' typing' : ''}`;
-      div.textContent = text;
-      chatLog.appendChild(div);
-      chatLog.scrollTop = chatLog.scrollHeight;
-      return div;
-    }
+  addMessage('assistant', 'Hi — I’m the Money Magnet AI demo for a medspa. Ask about a treatment, pricing, or booking, and I’ll show how the assistant qualifies and routes a lead.');
 
-    addMessage('assistant', 'Hi — I’m the Money Magnet AI demo for a medspa. Ask about a treatment, pricing, or booking, and I’ll show how the assistant qualifies and routes a lead.');
-
-    async function sendChat(message) {
-      addMessage('user', message);
-      history.push({ role: 'user', content: message });
-      const typing = addMessage('assistant', 'Thinking...', true);
-      try {
-        const res = await fetch('/api/medspa-demo-chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message, history: history.slice(-8) })
-        });
-        const data = await res.json();
-        typing.remove();
-        const reply = data.reply || 'I can help qualify this visitor and route them to book a consultation.';
-        addMessage('assistant', reply);
-        history.push({ role: 'assistant', content: reply });
-      } catch (err) {
-        typing.remove();
-        addMessage('assistant', 'The live AI endpoint is temporarily unavailable, but the lead capture flow below is still testable.');
-      }
-    }
-
-    chatForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const message = chatMessage.value.trim();
-      if (!message) return;
-      chatMessage.value = '';
-      sendChat(message);
+  async function sendChat(message) {
+   addMessage('user', message);
+   history.push({ role: 'user', content: message });
+   const typing = addMessage('assistant', 'Thinking...', true);
+   try {
+    const res = await fetch('/api/medspa-demo-chat', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({ message, history: history.slice(-8) })
     });
+    const data = await res.json();
+    typing.remove();
+    const reply = data.reply || 'I can help qualify this visitor and route them to book a consultation.';
+    addMessage('assistant', reply);
+    history.push({ role: 'assistant', content: reply });
+   } catch (err) {
+    typing.remove();
+    addMessage('assistant', 'The live AI endpoint is temporarily unavailable, but the lead capture flow below is still testable.');
+   }
+  }
 
-    document.querySelectorAll('.chip').forEach(chip => {
-      chip.addEventListener('click', () => sendChat(chip.dataset.prompt));
+  chatForm.addEventListener('submit', (event) => {
+   event.preventDefault();
+   const message = chatMessage.value.trim();
+   if (!message) return;
+   chatMessage.value = '';
+   sendChat(message);
+  });
+
+  document.querySelectorAll('.chip').forEach(chip => {
+   chip.addEventListener('click', () => sendChat(chip.dataset.prompt));
+  });
+
+  const leadForm = document.getElementById('leadForm');
+  const successBox = document.getElementById('successBox');
+  const errorBox = document.getElementById('errorBox');
+  const resultPreview = document.getElementById('resultPreview');
+  const submitLead = document.getElementById('submitLead');
+
+  leadForm.addEventListener('submit', async (event) => {
+   event.preventDefault();
+   successBox.style.display = 'none';
+   errorBox.style.display = 'none';
+   resultPreview.innerHTML = '';
+   submitLead.disabled = true;
+   submitLead.textContent = 'Submitting...';
+
+   const form = new FormData(leadForm);
+   const payload = Object.fromEntries(form.entries());
+   payload.booking_requested = form.get('booking_requested') === 'on';
+   payload.source = 'public_medspa_money_magnet_demo';
+
+   try {
+    const res = await fetch('/api/medspa-demo-lead', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify(payload)
     });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || 'Lead capture failed');
 
-    const leadForm = document.getElementById('leadForm');
-    const successBox = document.getElementById('successBox');
-    const errorBox = document.getElementById('errorBox');
-    const resultPreview = document.getElementById('resultPreview');
-    const submitLead = document.getElementById('submitLead');
-
-    leadForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      successBox.style.display = 'none';
-      errorBox.style.display = 'none';
-      resultPreview.innerHTML = '';
-      submitLead.disabled = true;
-      submitLead.textContent = 'Submitting...';
-
-      const form = new FormData(leadForm);
-      const payload = Object.fromEntries(form.entries());
-      payload.booking_requested = form.get('booking_requested') === 'on';
-      payload.source = 'public_medspa_money_magnet_demo';
-
-      try {
-        const res = await fetch('/api/medspa-demo-lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (!res.ok || !data.ok) throw new Error(data.error || 'Lead capture failed');
-
-        successBox.style.display = 'block';
-        successBox.innerHTML = `<strong>Lead captured.</strong><br>Fit: ${data.fit_status} · Score: ${data.qualification_score} · Sheet updated: ${data.updated_range || 'yes'} · Owner email: ${data.email_sent ? 'sent' : 'not sent'}`;
-        resultPreview.innerHTML = `
-          <div class="row"><span>Lead ID</span><strong>${data.lead_id}</strong></div>
-          <div class="row"><span>Next action</span><strong>${data.next_action}</strong></div>
-          <div class="row"><span>Booking CTA</span><a href="${data.booking_url}" target="_blank" rel="noreferrer">Open booking link</a></div>
-        `;
-      } catch (err) {
-        errorBox.style.display = 'block';
-        errorBox.textContent = err.message || 'Something went wrong.';
-      } finally {
-        submitLead.disabled = false;
-        submitLead.textContent = 'Submit demo lead';
-      }
-    });
-  </script>
+    successBox.style.display = 'block';
+    successBox.innerHTML = `<strong>Lead captured.</strong><br>Fit: ${data.fit_status} · Score: ${data.qualification_score} · Sheet updated: ${data.updated_range || 'yes'} · Owner email: ${data.email_sent ? 'sent' : 'not sent'}`;
+    resultPreview.innerHTML = `
+     <div class="row"><span>Lead ID</span><strong>${data.lead_id}</strong></div>
+     <div class="row"><span>Next action</span><strong>${data.next_action}</strong></div>
+     <div class="row"><span>Booking CTA</span><a href="${data.booking_url}" target="_blank" rel="noreferrer">Open booking link</a></div>
+    `;
+   } catch (err) {
+    errorBox.style.display = 'block';
+    errorBox.textContent = err.message || 'Something went wrong.';
+   } finally {
+    submitLead.disabled = false;
+    submitLead.textContent = 'Submit demo lead';
+   }
+  });
+ </script>
 </body>
 </html>

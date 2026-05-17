@@ -1001,3 +1001,613 @@ hr { border-color: rgba(93,235,255,.34) !important; color: #5DEBFF !important; b
 section::before, section::after, .section::before, .section::after {
   background-color: transparent !important;
 }
+
+
+/* ============================================================
+   v6 CLEAN FRONTEND RESET — premium editorial, not AI-template.
+   Contract: three visual colors only: obsidian, platinum, cyan.
+   Principles borrowed from Apple/BMW/Linear: restraint, whitespace,
+   sharp hierarchy, no decorative glow sludge, readable surfaces.
+   ============================================================ */
+:root {
+  --ai-bg: #050713 !important;
+  --ai-bg-2: #050713 !important;
+  --ai-surface-solid: #050713 !important;
+  --ai-surface: rgba(248,244,234,.035) !important;
+  --ai-surface-2: rgba(248,244,234,.055) !important;
+  --ai-card: rgba(248,244,234,.045) !important;
+  --ai-card-strong: rgba(248,244,234,.07) !important;
+  --ai-text: #F8F4EA !important;
+  --ai-text-soft: #F8F4EA !important;
+  --ai-muted: rgba(248,244,234,.76) !important;
+  --ai-muted-2: rgba(248,244,234,.62) !important;
+  --ai-line: rgba(248,244,234,.14) !important;
+  --ai-line-strong: rgba(93,235,255,.50) !important;
+  --ai-cyan: #5DEBFF !important;
+  --accent: #5DEBFF !important;
+  --primary-color: #5DEBFF !important;
+  --secondary-color: #F8F4EA !important;
+  --background: #050713 !important;
+  --paper: #050713 !important;
+  --card: #050713 !important;
+  --ink: #F8F4EA !important;
+  --ink-soft: rgba(248,244,234,.76) !important;
+  --muted: rgba(248,244,234,.76) !important;
+  --radius-sm: 2px !important;
+  --radius-md: 4px !important;
+  --radius-lg: 8px !important;
+  --radius-xl: 10px !important;
+}
+
+html, body {
+  background: #050713 !important;
+  color: #F8F4EA !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-feature-settings: "cv01", "cv03", "ss01" !important;
+}
+
+body {
+  background-image: none !important;
+  letter-spacing: -0.012em !important;
+}
+body::before, body::after, #cursor-glow { display: none !important; }
+
+/* Calm the 3D layer: present but no longer screaming AI-generated. */
+#hero-canvas {
+  opacity: .28 !important;
+  filter: grayscale(.15) saturate(.9) contrast(.85) !important;
+  mix-blend-mode: screen !important;
+}
+#hero::before, #hero::after, .hero::before, .hero::after,
+section::before, section::after, [class*="card"]::before, [class*="card"]::after {
+  background-image: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Structure: cleaner BMW/Apple style spacing, fewer glassy layers. */
+.container, .op-container {
+  max-width: 1180px !important;
+  padding-left: clamp(20px, 4vw, 56px) !important;
+  padding-right: clamp(20px, 4vw, 56px) !important;
+}
+section, main > section, .section {
+  background: #050713 !important;
+  color: #F8F4EA !important;
+  padding-top: clamp(72px, 9vw, 132px) !important;
+  padding-bottom: clamp(72px, 9vw, 132px) !important;
+  border-top: 1px solid rgba(248,244,234,.08) !important;
+}
+#hero, .hero, .page-hero, .product-hero, .op-hero {
+  min-height: min(820px, 100svh) !important;
+  padding-top: clamp(120px, 15vw, 180px) !important;
+  padding-bottom: clamp(86px, 10vw, 132px) !important;
+  overflow: hidden !important;
+  background: #050713 !important;
+}
+
+/* Typography first: clean, readable, less AI-marketing shiny. */
+h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .page-title {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: none !important;
+  text-shadow: none !important;
+  font-weight: 560 !important;
+  letter-spacing: clamp(-.06em, -0.04em, -.02em) !important;
+  line-height: .98 !important;
+  max-width: 980px !important;
+}
+h1, .hero-title { font-size: clamp(3.2rem, 8vw, 7.6rem) !important; }
+h2, .section-title { font-size: clamp(2.35rem, 5.6vw, 5.1rem) !important; }
+h3 { font-size: clamp(1.25rem, 2.2vw, 1.75rem) !important; line-height: 1.12 !important; letter-spacing: -.025em !important; }
+p, li, label, span, small, .subtitle, .lead, .section-subtitle, .hero-subtitle,
+.card p, [class*="card"] p, .blog-excerpt, .article-content p, .roadmap-desc {
+  color: rgba(248,244,234,.82) !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-shadow: none !important;
+  line-height: 1.62 !important;
+}
+.subtitle, .hero-subtitle, .lead, .section-subtitle {
+  max-width: 760px !important;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem) !important;
+  color: rgba(248,244,234,.74) !important;
+}
+strong, b {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  font-weight: 610 !important;
+}
+.gradient-text, .highlight, h1 span, h2 span, h3 span, .accent {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: none !important;
+  text-shadow: none !important;
+}
+
+/* Nav: compact, high-contrast, not glowing. */
+.navbar, header, .site-header, .op-header {
+  background: rgba(5,7,19,.92) !important;
+  backdrop-filter: blur(18px) saturate(120%) !important;
+  border-bottom: 1px solid rgba(248,244,234,.10) !important;
+  box-shadow: none !important;
+}
+.logo, .nav-logo, .brand, .logo-text { color: #F8F4EA !important; -webkit-text-fill-color: #F8F4EA !important; }
+.logo span, .nav-logo span, .brand span, .logo-text span { color: #F8F4EA !important; -webkit-text-fill-color: #F8F4EA !important; }
+.nav-links a, .navlinks a, .nav-menu a, .op-header nav a {
+  color: rgba(248,244,234,.78) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.78) !important;
+  background: transparent !important;
+  border: 0 !important;
+  font-size: 14px !important;
+  font-weight: 520 !important;
+}
+.nav-links a:hover, .navlinks a:hover, .nav-menu a:hover, .op-header nav a:hover {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+}
+
+/* Cards: stop the glassmorphism/card spam feel. */
+.card, .service-card, .feature-card, .product-card, .testimonial-card, .case-study-card,
+.portfolio-card, .card-xl, .roadmap-card, .guarantee-card, .guarantee-banner,
+.scale-upsell-card, .comparison-container, .op-card, .blog-card, [class*="card"] {
+  background: rgba(248,244,234,.045) !important;
+  background-image: none !important;
+  color: #F8F4EA !important;
+  border: 1px solid rgba(248,244,234,.12) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.card:hover, .service-card:hover, .feature-card:hover, .product-card:hover, .portfolio-card:hover, [class*="card"]:hover {
+  transform: none !important;
+  border-color: rgba(93,235,255,.40) !important;
+  background: rgba(248,244,234,.065) !important;
+  box-shadow: none !important;
+}
+.card h3, .service-card h3, .feature-card h3, .product-card h3, .testimonial-card h3, [class*="card"] h3,
+.card h2, [class*="card"] h2 {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+}
+
+/* Tags and eyebrows: outline labels, never cyan-filled text-on-cyan. */
+.eyebrow, .tag, .badge, .pill, .label, .op-badge, .case-study-badge,
+.hero-meta-item, .trust-item, .marquee-group li, .stat-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 1px solid rgba(248,244,234,.18) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  text-transform: none !important;
+  letter-spacing: -.005em !important;
+}
+
+/* CTAs: one clear accent use. */
+.btn-primary, .primary-btn, .cta-primary, button[type="submit"], input[type="submit"],
+a.btn-primary, .nav-links a.btn-primary, .navlinks a.btn-primary, .nav-menu a.btn-primary {
+  color: #050713 !important;
+  -webkit-text-fill-color: #050713 !important;
+  background: #5DEBFF !important;
+  background-image: none !important;
+  border: 1px solid #5DEBFF !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  font-weight: 620 !important;
+}
+.btn-primary:hover, .primary-btn:hover, .cta-primary:hover, button[type="submit"]:hover {
+  color: #050713 !important;
+  -webkit-text-fill-color: #050713 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0 0 4px rgba(93,235,255,.14) !important;
+}
+.btn-secondary, .secondary-btn, .cta-secondary, .btn-text, a.btn-text {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 1px solid rgba(248,244,234,.24) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+a:not(.btn-primary):not(.btn-secondary):not(.btn-text) {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+}
+.article-content a, p a, li a { border-bottom: 1px solid rgba(93,235,255,.65) !important; }
+
+/* Icons: restrained line tiles; no invisible glyphs, no emoji color. */
+.icon, .feature-icon, .service-icon, .product-icon, .capability-icon, .funnel-icon,
+.portfolio-emoji, .author-avatar, .guarantee-badge, .guarantee-banner-icon,
+.roadmap-check, .step-number, [class*="icon"], i[class*="fa-"] {
+  color: #5DEBFF !important;
+  -webkit-text-fill-color: #5DEBFF !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 1px solid rgba(93,235,255,.48) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
+  font-weight: 600 !important;
+}
+svg, svg *, path, circle, rect, line, polyline, polygon {
+  stroke: #5DEBFF !important;
+}
+svg [fill]:not([fill="none"]), path[fill]:not([fill="none"]), circle[fill]:not([fill="none"]), rect[fill]:not([fill="none"]) {
+  fill: #5DEBFF !important;
+}
+
+/* Mockups/previews: remove fake-dashboard slop; keep as simple framed proof cards. */
+.portfolio-preview, .portfolio-preview-inner, .browser-frame, [class*="mockup"], [class*="preview"], [class*="visual"],
+.comp-side, .manual, .automated, .scale-stat, .stat-item, .metric-card, .mini-card {
+  background: rgba(248,244,234,.045) !important;
+  background-image: none !important;
+  color: #F8F4EA !important;
+  border: 1px solid rgba(248,244,234,.12) !important;
+  box-shadow: none !important;
+}
+.portfolio-result, .case-study-num, .stat-number, .scale-stat-num {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+.portfolio-meta span, .author-info span, .portfolio-result-lbl, .scale-stat-lbl {
+  color: rgba(248,244,234,.70) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.70) !important;
+  background: transparent !important;
+}
+.browser-dots span, .dot, [class*="dot"] {
+  background: #5DEBFF !important;
+  border-color: #5DEBFF !important;
+}
+
+/* Forms and footer: visible text everywhere. */
+input, textarea, select {
+  background: rgba(248,244,234,.05) !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  border: 1px solid rgba(248,244,234,.18) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+input::placeholder, textarea::placeholder { color: rgba(248,244,234,.52) !important; -webkit-text-fill-color: rgba(248,244,234,.52) !important; }
+footer, .footer, #footer {
+  background: #050713 !important;
+  color: #F8F4EA !important;
+  border-top: 1px solid rgba(248,244,234,.12) !important;
+}
+footer a, .footer a, footer p, .footer p, footer li, .footer li {
+  color: rgba(248,244,234,.78) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.78) !important;
+  background: transparent !important;
+}
+
+/* Clean the worst AI-template sections without deleting business content. */
+.comparison-container, .testimonials-slider, .portfolio-grid, .grid-3, .stats-grid {
+  gap: clamp(18px, 2.4vw, 32px) !important;
+}
+.chaos-visual span, .flow-visual span, .arrow-mess, .arrow-right, .line {
+  color: #5DEBFF !important;
+  -webkit-text-fill-color: #5DEBFF !important;
+  background: transparent !important;
+  border-color: rgba(93,235,255,.42) !important;
+}
+
+/* Mobile: prevent hidden text from cramped nav/card layouts. */
+@media (max-width: 760px) {
+  h1, .hero-title { font-size: clamp(2.75rem, 16vw, 4.8rem) !important; }
+  h2, .section-title { font-size: clamp(2rem, 10vw, 3.2rem) !important; }
+  section, main > section { padding-top: 68px !important; padding-bottom: 68px !important; }
+  .navbar, header, .site-header { padding-left: 16px !important; padding-right: 16px !important; }
+  .cta-group, .hero-actions, .button-group { align-items: stretch !important; }
+  .btn-primary, .btn-secondary, .btn-text { width: 100% !important; justify-content: center !important; text-align: center !important; }
+}
+
+
+/* v6.1 mobile containment and contrast hardening. */
+#hero .hero-content, .hero-content, .hero .container > *, .page-hero .container > *, .product-hero .container > * {
+  width: min(100%, 980px) !important;
+  max-width: min(100%, 980px) !important;
+  box-sizing: border-box !important;
+}
+#hero .eyebrow, #hero h1, #hero h2, #hero .cta-group,
+.hero-content .eyebrow, .hero-content h1, .hero-content h2, .hero-content .cta-group {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 760px) {
+  #hero .container, .hero .container, .page-hero .container, .product-hero .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+  #hero .hero-content, .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  #hero .eyebrow, .hero-content .eyebrow { display: inline-flex !important; max-width: 100% !important; white-space: normal !important; }
+}
+
+
+/* v6.2 visibility sweep: kill leftover legacy light boxes/dark text and mobile hero overflow. */
+.service-area-grid li, .service-area-grid > *, .city-list li, .area-list li,
+[class*="result"], .result-card, .results-card, .result-number, .result-label,
+.contact-card, .contact-info, .contact-method, .contact-panel, .contact-section,
+.final-cta, .cta-card, .cta-panel, .book-call, .calendar-card {
+  background: rgba(248,244,234,.045) !important;
+  background-image: none !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  border-color: rgba(248,244,234,.14) !important;
+  box-shadow: none !important;
+}
+.result-number, .case-study-num, .portfolio-result-num, .scale-stat-num,
+.stat-number, .metric-number, .big-number {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+.result-label, .portfolio-result-lbl, .metric-label, .contact-card p, .contact-card a,
+.contact-info p, .contact-info a, .final-cta p, .cta-card p, .calendar-card p {
+  color: rgba(248,244,234,.78) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.78) !important;
+  background: transparent !important;
+}
+@media (max-width: 760px) {
+  body #hero .hero-content, body .hero-content,
+  body #hero .hero-content > *, body .hero-content > * {
+    width: auto !important;
+    max-width: calc(100vw - 40px) !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  body #hero .cta-group, body .hero-content .cta-group {
+    width: 100% !important;
+    max-width: calc(100vw - 40px) !important;
+  }
+}
+
+
+/* v6.3 final contrast: page-specific legacy inline/template surfaces. */
+.reveal-up, .reveal-left, .reveal-right, .fade-in,
+.reveal-ready, [class*="delay-"] {
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+}
+div.reveal-up[style*="text-muted"], div.reveal-up[style*="var(--text-muted)"],
+section .reveal-up[style*="color"], section .fade-in[style*="color"] {
+  color: rgba(248,244,234,.78) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.78) !important;
+}
+.proof, .proof > div, .section .grid .item, .item, .audit-card, .audit-step,
+.problem-card, .solution-card, .offer-card, .feature, .feature-item,
+[class*="proof"], [class*="item"] {
+  background: rgba(248,244,234,.045) !important;
+  background-image: none !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  border: 1px solid rgba(248,244,234,.14) !important;
+  box-shadow: none !important;
+}
+.proof strong, .proof b, .item strong, .item b, [class*="proof"] strong, [class*="item"] b {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  background: transparent !important;
+}
+.proof .note, .note, .item p, [class*="item"] p, [class*="proof"] span {
+  color: rgba(248,244,234,.78) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.78) !important;
+  background: transparent !important;
+}
+
+
+/* v6.4 mobile frontend polish: real single-column rhythm, no squeezed text, no blank white panels. */
+#urgency-banner, .urgency-banner { display: none !important; }
+.chat-welcome-bubble { display: none !important; }
+.chat-toggle { width: 52px !important; height: 52px !important; opacity: .88 !important; }
+#mission .card, #mission [class*="card"] {
+  max-width: 980px !important;
+  margin-inline: auto !important;
+  padding: clamp(28px, 5vw, 64px) !important;
+}
+#mission .card p {
+  max-width: 900px !important;
+  margin-inline: auto !important;
+  font-size: clamp(1.35rem, 3.2vw, 2.6rem) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -.035em !important;
+  color: #F8F4EA !important;
+}
+iframe, .calendar-embed, .booking-embed, [class*="calendar"], [class*="booking"] {
+  background: #050713 !important;
+  color: #F8F4EA !important;
+  border: 1px solid rgba(248,244,234,.14) !important;
+}
+@media (max-width: 900px) {
+  .grid, .grid-2, .grid-3, .grid-4, .portfolio-grid, .stats-grid, .products-grid,
+  .services-grid, .features-grid, .testimonials-track, .comparison-container,
+  .roadmap-card, .scale-upsell-card, .contact-grid, .footer-grid,
+  [class*="grid"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .card, .service-card, .feature-card, .product-card, .portfolio-card,
+  .testimonial-card, .case-study-card, [class*="card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: clamp(22px, 6vw, 34px) !important;
+  }
+  p, li, label, .card p, [class*="card"] p, .subtitle, .lead {
+    font-size: max(16px, 1rem) !important;
+    line-height: 1.55 !important;
+  }
+  .nav-links, .navlinks, .nav-menu { gap: 8px !important; }
+  .nav-links a:not(.btn-primary), .navlinks a:not(.btn-primary), .nav-menu a:not(.btn-primary) {
+    font-size: 13px !important;
+  }
+}
+@media (max-width: 520px) {
+  .nav-links a:not(.btn-primary), .navlinks a:not(.btn-primary), .nav-menu a:not(.btn-primary) { display: none !important; }
+  .navbar, header, .site-header { min-height: 64px !important; }
+  #mission .card p {
+    font-size: clamp(1.25rem, 7vw, 2rem) !important;
+    line-height: 1.18 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+  .text-center { text-align: left !important; }
+  .text-center .section-title, .text-center .subtitle, .text-center p { margin-left: 0 !important; margin-right: 0 !important; }
+}
+
+
+/* v6.5 remove remaining placeholder/light panels and fake-template visuals. */
+.scale-upsell-aside, .portfolio-preview-placeholder, .contact-form-full,
+form, .contact-form, .form-card, .contact-form-full *, form *,
+.mockup-page, .mockup-chart, .roadmap-mockup, .roadmap-visual,
+.browser-frame, .portfolio-preview, .portfolio-preview-inner {
+  background: rgba(248,244,234,.045) !important;
+  background-color: rgba(248,244,234,.045) !important;
+  background-image: none !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  border-color: rgba(248,244,234,.14) !important;
+  box-shadow: none !important;
+}
+/* Reduce artificial UI illustrations that made the page feel generated. */
+.roadmap-visual, .portfolio-emoji, .chaos-visual, .flow-visual {
+  opacity: .72 !important;
+}
+.mockup-line, .mockup-bar, .line, .browser-dots span {
+  background: rgba(93,235,255,.72) !important;
+  color: #5DEBFF !important;
+  -webkit-text-fill-color: #5DEBFF !important;
+}
+input, textarea, select, option {
+  background: #050713 !important;
+  background-color: #050713 !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  border: 1px solid rgba(248,244,234,.24) !important;
+}
+label, form label, .form-group label {
+  color: rgba(248,244,234,.82) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.82) !important;
+  background: transparent !important;
+}
+/* Desktop clean-up: avoid endless 3-up card spam by giving major sales sections more breathing room. */
+#products .grid-3, #industries .grid-3, #process .grid-3, #ai-search-readiness .grid-3 {
+  align-items: stretch !important;
+}
+@media (min-width: 901px) {
+  #industries .grid-3 .card, #process .grid-3 .card, #ai-search-readiness .grid-3 .card {
+    padding: 34px !important;
+  }
+}
+
+
+/* v6.6 final polish: simpler responsive header, larger readable copy, no placeholder panels. */
+@media (max-width: 1200px) {
+  .nav-links a:not(.btn-primary):not(.btn-secondary),
+  .navlinks a:not(.btn-primary):not(.btn-secondary),
+  .nav-menu a:not(.btn-primary):not(.btn-secondary) {
+    display: none !important;
+  }
+  .nav-links, .navlinks, .nav-menu {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+  }
+  .logo, .brand, .nav-logo { max-width: 52vw !important; }
+}
+@media (max-width: 760px) {
+  .nav-links a.btn-primary, .navlinks a.btn-primary, .nav-menu a.btn-primary,
+  .nav-links a.btn-secondary, .navlinks a.btn-secondary, .nav-menu a.btn-secondary {
+    font-size: 11px !important;
+    padding: 10px 12px !important;
+    min-height: 40px !important;
+    max-width: 48vw !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .logo img, .brand img, .nav-logo img { width: 34px !important; height: 34px !important; }
+  .logo span, .brand span, .nav-logo span { font-size: 14px !important; }
+}
+/* Make supporting copy readable, not faint/AI-template microtext. */
+.card p, .service-card p, .feature-card p, .product-card p, .portfolio-card p,
+.testimonial-card p, .case-study-card p, .hero-meta-item, .stat-item,
+.timeline-card p, .process-card p, .industry-card p, .roadmap-card p,
+.scale-upsell-card p, .contact-card p, .footer p, .footer li {
+  color: rgba(248,244,234,.84) !important;
+  -webkit-text-fill-color: rgba(248,244,234,.84) !important;
+  font-size: clamp(1rem, 1.25vw, 1.08rem) !important;
+  line-height: 1.6 !important;
+}
+.card h3, .service-card h3, .feature-card h3, .product-card h3,
+.portfolio-card h3, .testimonial-card h3, .case-study-card h3,
+.timeline-card h3, .process-card h3, .industry-card h3 {
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+}
+/* Remove remaining pale project placeholder and harsh split divider. */
+.portfolio-card-cta .portfolio-preview,
+.portfolio-card-cta .portfolio-preview-placeholder,
+.portfolio-card-cta .portfolio-preview-inner,
+.portfolio-preview-placeholder {
+  background: #050713 !important;
+  background-color: #050713 !important;
+  background-image: linear-gradient(135deg, rgba(93,235,255,.10), rgba(248,244,234,.03)) !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+  border: 1px solid rgba(93,235,255,.24) !important;
+}
+.comparison-container::before, .split-divider, .comparison-divider, .vs-divider,
+[class*="divider"] {
+  background: rgba(93,235,255,.34) !important;
+  background-color: rgba(93,235,255,.34) !important;
+  box-shadow: none !important;
+}
+@media (max-width: 900px) {
+  .card p, .service-card p, .feature-card p, .product-card p, .portfolio-card p,
+  .testimonial-card p, .case-study-card p, .hero-meta-item, .stat-item,
+  .timeline-card p, .process-card p, .industry-card p, .roadmap-card p,
+  .scale-upsell-card p, .contact-card p {
+    font-size: 16px !important;
+    line-height: 1.62 !important;
+  }
+  .contact-form-full, form, .contact-form { padding: 22px !important; }
+  input, textarea, select { min-height: 48px !important; font-size: 16px !important; }
+}
+
+
+/* v6.7 final QA fix: no tiny CTA text, no pale nav/footer slabs. */
+.nav-links, .navlinks, .nav-menu, .site-footer, footer {
+  background: #050713 !important;
+  background-color: #050713 !important;
+  background-image: none !important;
+  color: #F8F4EA !important;
+  -webkit-text-fill-color: #F8F4EA !important;
+}
+@media (max-width: 760px) {
+  .nav-links a.btn-primary, .navlinks a.btn-primary, .nav-menu a.btn-primary,
+  .nav-links a.btn-secondary, .navlinks a.btn-secondary, .nav-menu a.btn-secondary {
+    font-size: 12px !important;
+    line-height: 1.15 !important;
+    padding: 10px 12px !important;
+  }
+}
