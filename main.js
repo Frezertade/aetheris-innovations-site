@@ -197,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Create orbital rings
       rings = [
-        { radius: baseRadius * 0.6, tiltX: 0.8, tiltY: 0.2, speed: 0.0004, hue: 210, width: mobile ? 1.5 : 2 },
-        { radius: baseRadius * 0.85, tiltX: 0.3, tiltY: 0.7, speed: -0.0003, hue: 260, width: mobile ? 1.2 : 1.8 },
-        { radius: baseRadius * 1.1, tiltX: 0.6, tiltY: 0.5, speed: 0.00025, hue: 185, width: mobile ? 1 : 1.5 },
+        { radius: baseRadius * 0.6, tiltX: 0.8, tiltY: 0.2, speed: 0.0004, hue: 188, width: mobile ? 1.5 : 2 },
+        { radius: baseRadius * 0.85, tiltX: 0.3, tiltY: 0.7, speed: -0.0003, hue: 188, width: mobile ? 1.2 : 1.8 },
+        { radius: baseRadius * 1.1, tiltX: 0.6, tiltY: 0.5, speed: 0.00025, hue: 188, width: mobile ? 1 : 1.5 },
       ];
 
       // Create floating particles
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
           y: (Math.random() - 0.5) * baseRadius * 1.2,
           z: Math.sin(angle) * dist,
           size: mobile ? 1.5 + Math.random() * 2 : 2 + Math.random() * 3,
-          hue: 190 + Math.random() * 80,
+          hue: 188,
           speed: 0.0001 + Math.random() * 0.0003,
           phase: Math.random() * Math.PI * 2
         };
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Draw glowing core
       const coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.min(width, height) * 0.15);
       coreGrad.addColorStop(0, 'rgba(93, 235, 255, 0.32)');
-      coreGrad.addColorStop(0.45, 'rgba(215, 181, 109, 0.14)');
+      coreGrad.addColorStop(0.45, 'rgba(93, 235, 255, 0.14)');
       coreGrad.addColorStop(1, 'transparent');
       ctx.fillStyle = coreGrad;
       ctx.beginPath();
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const orbGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, orbSize);
       orbGrad.addColorStop(0, 'rgba(248, 244, 234, 0.98)');
       orbGrad.addColorStop(0.3, 'rgba(93, 235, 255, 0.86)');
-      orbGrad.addColorStop(0.68, 'rgba(215, 181, 109, 0.38)');
+      orbGrad.addColorStop(0.68, 'rgba(93, 235, 255, 0.38)');
       orbGrad.addColorStop(1, 'transparent');
       ctx.fillStyle = orbGrad;
       ctx.beginPath();

@@ -5,7 +5,7 @@ Premium SaaS / Stripe precision.
 
 ### Key choices
 - Typography: Fraunces display + Geist UI.
-- Color: #533afd accent on #fffaf2 canvas.
+- Color: #5DEBFF accent on #F8F4EA canvas.
 - Interaction: conversion-first CTAs with clear secondary action.
 
 ### Trade-offs

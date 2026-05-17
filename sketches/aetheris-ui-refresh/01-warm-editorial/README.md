@@ -5,7 +5,7 @@ Warm editorial / high trust.
 
 ### Key choices
 - Typography: Fraunces display + Geist UI.
-- Color: #e8471c accent on #f6f0e6 canvas.
+- Color: #5DEBFF accent on #F8F4EA canvas.
 - Interaction: conversion-first CTAs with clear secondary action.
 
 ### Trade-offs

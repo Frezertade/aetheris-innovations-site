@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,30..100,0..1;1,9..144,300..700,30..100,0..1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Geist', sans-serif; background: #fafaf9; color: #1a1a1a; line-height: 1.6; }
+    body { font-family: 'Geist', sans-serif; background: #F8F4EA; color: #050713; line-height: 1.6; }
     .container { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem; }
     h1 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
     p.sub { color: #666; margin-bottom: 2rem; }
@@ -17,28 +17,28 @@
     label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.4rem; }
     input, select, textarea {
       width: 100%; padding: 0.75rem; border: 1px solid #ddd; background: #fff;
-      font-family: 'Geist', sans-serif; font-size: 0.95rem; color: #1a1a1a;
+      font-family: 'Geist', sans-serif; font-size: 0.95rem; color: #050713;
     }
-    input:focus, select:focus, textarea:focus { outline: none; border-color: #B87333; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #5DEBFF; }
     textarea { min-height: 100px; resize: vertical; }
     .tier-select { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
     .tier-option {
-      border: 2px solid #e5e5e5; padding: 1rem; text-align: center; cursor: pointer;
+      border: 2px solid #F8F4EA; padding: 1rem; text-align: center; cursor: pointer;
       transition: all 0.2s; background: #fff;
     }
-    .tier-option:hover { border-color: #B87333; }
-    .tier-option.selected { border-color: #1a1a1a; background: #1a1a1a; color: #fff; }
+    .tier-option:hover { border-color: #5DEBFF; }
+    .tier-option.selected { border-color: #050713; background: #050713; color: #fff; }
     .tier-option .tier-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1rem; }
     .tier-option .tier-price { font-size: 0.8rem; margin-top: 0.3rem; opacity: 0.8; }
-    .tier-option.selected .tier-price { color: #B87333; opacity: 1; }
+    .tier-option.selected .tier-price { color: #5DEBFF; opacity: 1; }
     button[type="submit"] {
-      width: 100%; padding: 1rem; background: #1a1a1a; color: #fff; border: none;
+      width: 100%; padding: 1rem; background: #050713; color: #fff; border: none;
       font-family: 'Geist', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer;
       transition: background 0.2s;
     }
     button[type="submit"]:hover { background: #333; }
     button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
-    .required { color: #B87333; }
+    .required { color: #5DEBFF; }
     @media (max-width: 480px) {
       .tier-select { grid-template-columns: 1fr; }
     }
@@ -179,7 +179,7 @@
         const data = await response.json().catch(() => ({}));
 
         if (response.ok && data.ok) {
-          status.innerHTML = '<span style="color:#2d7d46;">✓ Received! Redirecting to booking...</span>';
+          status.innerHTML = '<span style="color:#5DEBFF;">✓ Received! Redirecting to booking...</span>';
           setTimeout(() => {
             window.location.href = BOOKING_LINK;
           }, 1200);
@@ -189,7 +189,7 @@
       } catch (err) {
         btn.disabled = false;
         btn.textContent = 'Submit & book strategy call →';
-        status.innerHTML = '<span style="color:#c0392b;">Something went wrong. Please email hello@aetherisinnovations.com</span>';
+        status.innerHTML = '<span style="color:#5DEBFF;">Something went wrong. Please email hello@aetherisinnovations.com</span>';
         console.error('Intake submit error:', err);
       }
     }

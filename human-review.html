@@ -8,17 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Geist', sans-serif; background: #0a0a0a; color: #e5e5e5; line-height: 1.6; }
+    body { font-family: 'Geist', sans-serif; background: #050713; color: #F8F4EA; line-height: 1.6; }
     .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
     header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #222; }
     h1 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; }
     .stats { display: flex; gap: 2rem; }
     .stat { text-align: center; }
-    .stat .num { font-family: 'Fraunces', serif; font-size: 2rem; color: #B87333; }
+    .stat .num { font-family: 'Fraunces', serif; font-size: 2rem; color: #5DEBFF; }
     .stat .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
     .filters { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
     .filters button { padding: 0.5rem 1rem; background: transparent; border: 1px solid #333; color: #888; cursor: pointer; font-family: 'Geist', sans-serif; }
-    .filters button.active { border-color: #B87333; color: #B87333; }
+    .filters button.active { border-color: #5DEBFF; color: #5DEBFF; }
     .audit-grid { display: grid; gap: 1rem; }
     .audit-card {
       background: #111; border: 1px solid #222; padding: 1.5rem;
@@ -32,16 +32,16 @@
       padding: 0.2rem 0.6rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
       border: 1px solid;
     }
-    .badge-hot { color: #e74c3c; border-color: #e74c3c; }
-    .badge-warm { color: #f39c12; border-color: #f39c12; }
-    .badge-lukewarm { color: #f1c40f; border-color: #f1c40f; }
-    .badge-cold { color: #95a5a6; border-color: #95a5a6; }
-    .badge-approved { color: #2ecc71; border-color: #2ecc71; }
-    .badge-rejected { color: #e74c3c; border-color: #e74c3c; }
+    .badge-hot { color: #5DEBFF; border-color: #5DEBFF; }
+    .badge-warm { color: #5DEBFF; border-color: #5DEBFF; }
+    .badge-lukewarm { color: #5DEBFF; border-color: #5DEBFF; }
+    .badge-cold { color: #F8F4EA; border-color: #F8F4EA; }
+    .badge-approved { color: #5DEBFF; border-color: #5DEBFF; }
+    .badge-rejected { color: #5DEBFF; border-color: #5DEBFF; }
     .meta { font-size: 0.85rem; color: #888; margin-bottom: 0.5rem; }
     .meta span { margin-right: 1rem; }
     .score-bar { height: 4px; background: #222; margin: 0.75rem 0; border-radius: 2px; overflow: hidden; }
-    .score-bar-fill { height: 100%; background: #B87333; transition: width 0.3s; }
+    .score-bar-fill { height: 100%; background: #5DEBFF; transition: width 0.3s; }
     .details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
     .detail-block h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666; margin-bottom: 0.3rem; }
     .detail-block p, .detail-block ul { font-size: 0.85rem; color: #aaa; }
@@ -52,12 +52,12 @@
       padding: 0.6rem 1rem; border: 1px solid; background: transparent; color: inherit;
       font-family: 'Geist', sans-serif; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
     }
-    .btn-approve { border-color: #2ecc71; color: #2ecc71; }
-    .btn-approve:hover { background: #2ecc71; color: #0a0a0a; }
-    .btn-reject { border-color: #e74c3c; color: #e74c3c; }
-    .btn-reject:hover { background: #e74c3c; color: #0a0a0a; }
+    .btn-approve { border-color: #5DEBFF; color: #5DEBFF; }
+    .btn-approve:hover { background: #5DEBFF; color: #050713; }
+    .btn-reject { border-color: #5DEBFF; color: #5DEBFF; }
+    .btn-reject:hover { background: #5DEBFF; color: #050713; }
     .btn-comment { border-color: #888; color: #888; }
-    .btn-comment:hover { background: #888; color: #0a0a0a; }
+    .btn-comment:hover { background: #888; color: #050713; }
     .loading { text-align: center; padding: 4rem; color: #666; }
     .empty { text-align: center; padding: 4rem; color: #555; }
     .modal-overlay {
@@ -69,11 +69,11 @@
       background: #111; border: 1px solid #333; padding: 2rem; max-width: 500px; width: 90%;
     }
     .modal h3 { font-family: 'Fraunces', serif; margin-bottom: 1rem; }
-    .modal textarea { width: 100%; min-height: 100px; background: #0a0a0a; border: 1px solid #333; color: #e5e5e5; padding: 0.75rem; font-family: 'Geist', sans-serif; margin-bottom: 1rem; }
-    .modal input { width: 100%; background: #0a0a0a; border: 1px solid #333; color: #e5e5e5; padding: 0.5rem; font-family: 'Geist', sans-serif; margin-bottom: 0.5rem; }
+    .modal textarea { width: 100%; min-height: 100px; background: #050713; border: 1px solid #333; color: #F8F4EA; padding: 0.75rem; font-family: 'Geist', sans-serif; margin-bottom: 1rem; }
+    .modal input { width: 100%; background: #050713; border: 1px solid #333; color: #F8F4EA; padding: 0.5rem; font-family: 'Geist', sans-serif; margin-bottom: 0.5rem; }
     .modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
-    .modal-actions button { padding: 0.5rem 1rem; border: 1px solid #333; background: transparent; color: #e5e5e5; cursor: pointer; }
-    .modal-actions button.primary { border-color: #B87333; color: #B87333; }
+    .modal-actions button { padding: 0.5rem 1rem; border: 1px solid #333; background: transparent; color: #F8F4EA; cursor: pointer; }
+    .modal-actions button.primary { border-color: #5DEBFF; color: #5DEBFF; }
   </style>
   <link rel="stylesheet" href="/aetheris-ui.css">
 </head>

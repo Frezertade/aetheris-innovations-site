@@ -5,7 +5,7 @@ Technical dark / Linear energy.
 
 ### Key choices
 - Typography: Fraunces display + Geist UI.
-- Color: #ff9a77 accent on #11100e canvas.
+- Color: #5DEBFF accent on #050713 canvas.
 - Interaction: conversion-first CTAs with clear secondary action.
 
 ### Trade-offs
